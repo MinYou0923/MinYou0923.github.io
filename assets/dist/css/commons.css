@@ -553,6 +553,8 @@ body.snow .fixObWrap .no7 {background:url('../image/snow07.png') center no-repea
 .mindWrap .contBox .toggle .btn button {width:49.02%;border-radius:12px;text-align: center;height:48px;background:#fff;font-size:16px;color:#222;font-weight:500;border:none;}
 .mindWrap .contBox .toggle .btn button.no1 {background:#fae14b;}
 .mindWrap .contBox .toggle .btn button.no1 span{padding-left:40px;background:url(../image/mind03.png) 0 50% no-repeat;background-size:34px auto;}
+.mindWrap .contBox .toggle .btn button.no3 {background:#0064FF;margin-left:2.04%;}
+.mindWrap .contBox .toggle .btn button.no3 span{padding-left:40px;color:#ffffff;background:url(../image/Toss_Logo.png) 0 50% no-repeat;background-size:34px auto;}
 .mindWrap .contBox .toggle .btn button.no2 {margin-left:2.04%;}
 .mindWrap .contBox .toggle .btn button.no2 span{padding-left:25px;background:url(../image/mind04.png) 0 50% no-repeat;background-size:17px auto;}
 .mindWrap .contBox.bride {border:1px solid #ede9ea;margin-bottom: 0}
