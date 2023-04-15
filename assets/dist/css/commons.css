@@ -82,7 +82,7 @@ body.noScroll {overflow: hidden;position: fixed;width: 100%;height: 100%;}
 .mt2{transition:3s all; opacity:0; transition-delay:1200ms;}
 
 :root {
-    --border-light: #efe2ce;
+    --border-light: #d5d5d5;
     --background-light: #fdf5dd;
     --emphasize: #a06834;
     --emphasize-darker: #906a33;
