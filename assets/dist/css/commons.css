@@ -64,6 +64,17 @@ body.noScroll {overflow: hidden;position: fixed;width: 100%;height: 100%;}
 .infoLoca .inner{max-width: 540px;margin: 0 auto;}
 
 .ranTxt .ran{transition:2s all; opacity:0;letter-spacing: 0 !important}
+.ranTxt .ran.r1 {transition-delay:50ms;}
+.ranTxt .ran.r2 {transition-delay:80ms;}
+.ranTxt .ran.r3 {transition-delay:110ms;}
+.ranTxt .ran.r4 {transition-delay:140ms;}
+.ranTxt .ran.r5 {transition-delay:170ms;}
+.ranTxt .ran.r6 {transition-delay:200ms;}
+.ranTxt .ran.r7 {transition-delay:2300ms;}
+.ranTxt .ran.r8 {transition-delay:260ms;}
+.ranTxt .ran.r9 {transition-delay:290ms;}
+.ranTxt .ran.r10 {transition-delay:320ms;}
+/*
 .ranTxt .ran.r1 {transition-delay:250ms;}
 .ranTxt .ran.r2 {transition-delay:400ms;}
 .ranTxt .ran.r3 {transition-delay:550ms;}
@@ -73,13 +84,13 @@ body.noScroll {overflow: hidden;position: fixed;width: 100%;height: 100%;}
 .ranTxt .ran.r7 {transition-delay:1150ms;}
 .ranTxt .ran.r8 {transition-delay:1300ms;}
 .ranTxt .ran.r9 {transition-delay:1450ms;}
-.ranTxt .ran.r10 {transition-delay:1600ms;}
+.ranTxt .ran.r10 {transition-delay:1600ms;} */
 
 .atm .ranTxt .ran{opacity:1;}
 .atm .mt,
 .atm .mt2{transform:translate(0,0) !important; opacity:1 !important;}
-.mt{transition:2s all ease; transform:translateY(50px); opacity:0; transition-delay:500ms;}
-.mt2{transition:3s all; opacity:0; transition-delay:1200ms;}
+.mt{transition:2s all ease; transform:translateY(50px); opacity:0; transition-delay:50ms;}
+.mt2{transition:3s all; opacity:0; transition-delay:100ms;}
 
 :root {
     --border-light: #d5d5d5;
@@ -108,6 +119,8 @@ body.noScroll {overflow: hidden;position: fixed;width: 100%;height: 100%;}
     font-weight: 600;
     /*color: var(--emphasize);*/
     max-width:540px;
+
+
 }
 
 .main .date {
@@ -244,7 +257,7 @@ body.snow .fixObWrap .no7 {background:url('../image/snow07.png') center no-repea
 .secTitleWrap.t1 .hanTit > span:not(.ran):before,
 .secTitleWrap.t1 .hanTit > span:not(.ran):after{display: none}
 .secTitleWrap.t1 .hanTit .ran{letter-spacing:.14em;text-indent: .14em;}
-.secTitleWrap .mt{transition-delay: 500ms;transform:translateY(30px);}
+.secTitleWrap .mt{transition-delay: 50ms;transform:translateY(30px);}
 
 .inviteBox{position:relative;font-size: 20px;color: #1f4913;line-height: 1.45;/* background:url(../image/mainBottom_bg.jpg) no-repeat;  */ background:#f8f9f5;background-size:cover;z-index: 1; height:165px;}
 .inviteBox:after {display: none; }
@@ -363,11 +376,11 @@ body.snow .fixObWrap .no7 {background:url('../image/snow07.png') center no-repea
 .galleryWrap .galWrap .galList ul:after{display: block;content: '';clear: both;}
 .galleryWrap .galWrap .galList .col{box-sizing: border-box;}
 .galleryWrap .galWrap .galList .img img{width: 100%}
-.galleryWrap .galWrap .galList .col li{float: left;padding: 0 10px;width: 25%;position: relative;margin-bottom:20px;overflow: hidden;z-index: 1;box-sizing: border-box; }
+.galleryWrap .galWrap .galList .col li{float: left;padding: 0 10px;width: 33.3333%;position: relative;margin-bottom:20px;overflow: hidden;z-index: 1;box-sizing: border-box; }
 .galleryWrap .galWrap .galList .col li:first-child {margin-left:0;;}
 .galleryWrap .galWrap .videoImg + .gallery .galList .col li:first-child {margin-left:50%;}
 .galleryWrap .galWrap .galList .col li > a{display: block; position: relative; overflow: hidden;  border-radius:20px;}
-.galleryWrap .galWrap .galList .col li > a .img {background-size:cover !important; background-position:center center !important; padding-bottom:125.575%; display: block;}
+.galleryWrap .galWrap .galList .col li > a .img {background-size:cover !important; background-position:center center !important; padding-bottom:100%; display: block;}
 .galleryWrap .galWrap .galList.hiddenList .col li:first-child {margin-left:0;;}
 .galleryWrap .galWrap .videoImg + .gallery .galList.hiddenList .col li:first-child {margin-left:0;;}
 .galleryWrap .galWrap .more{margin-top:15px;}
@@ -376,7 +389,7 @@ body.snow .fixObWrap .no7 {background:url('../image/snow07.png') center no-repea
 .galleryWrap .galWrap .galList .col li > a:hover .hover{opacity: 1;}
 .galleryWrap .galWrap .galList .pop{opacity: 0;transition: all 0.5s;position: absolute;top:0;left:0;width: 100%;height:100%;z-index: 1; background:url('../image/gal_hover1.png') center no-repeat; background-size:cover;}
 .galleryWrap .galWrap .galList .hover{opacity: 0;transition: all 0.4s 100ms;width: 106px;height:106px;position: absolute;top:50%;left:50%;margin: -53px 0 0 -53px;z-index: 2;background:url('../image/gal_hover2.png') no-repeat 50% 50%;box-sizing: border-box;border: 2px solid #fff;border-radius: 100%;}
-.galleryWrap .galWrap.mt{transition-delay: 900ms;transition-duration: 3s;transform:translateY(60px);}
+.galleryWrap .galWrap.mt{transition-delay: 90ms;transition-duration: 3s;transform:translateY(60px);}
 
 .hiddenList {display: none;}
 
@@ -853,8 +866,8 @@ body.showImg .popImg{visibility: visible;opacity: 1}
     .popImg .btnClose{background-image: url(../image/icon_close_white_m.png);}
     .popImg .btnDownload{right: auto;left: 13px;background-image: url(../image/icon_download_m.png);}
     
-    .mt{transition-delay:100ms;transform:translateY(30px);transition-duration: 1.5s}
-    .mt2{transition-delay:800ms;}
+    .mt{transition-delay:50ms;transform:translateY(30px);transition-duration: 1.5s}
+    .mt2{transition-delay:100ms;}
     
     .petalObj{transition-duration: 3s;}
     .petalObj.no1{top: 27%;right: 5%;width: 16px;height: 12px;background-image: url(../image/petal1_m.png);}
