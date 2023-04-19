@@ -26,6 +26,27 @@
   <link href="./assets/dist/css/swiper.min.css" rel="stylesheet">
   <link href="./assets/dist/css/jquery-ui.min.css" rel="stylesheet">
   <link href="./assets/dist/css/banner.css" rel="stylesheet">
+  <style>
+    .data-item {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+
+    .data-item .timestamp {
+      color: #999;
+      font-size: 14px;
+    }
+
+    .data-item .name {
+      font-weight: bold;
+    }
+
+    .data-item .text {
+      margin-top: 5px;
+    }
+  </style>
 </head>
 
 <body class="banner" oncontextmenu="return false" onselectstart="return false" ondragstart="return false">
@@ -660,7 +681,40 @@
         </div>
       </section> -->
       <!-- //infoWrap -->
-      <!-- guestBookWrap - 한 줄 메세지 & 참석 여부
+
+      <script>
+        function startsend() {
+          var groomOrBride_gb = $('input[name="send"]:checked').val();
+          var name_gb = $("#name-input_gb").val();
+          var text_gb = $("#gb_comment").val();
+          if (name_gb == "" || text_gb == "") {
+            alert("모든 필드를 입력해주세요.");
+            return false;
+          }
+          var timestamp = new Date().toISOString();
+          var data = {
+            "groomOrBride": groomOrBride_gb,
+            "name": name_gb,
+            "text": text_gb,
+            "timestamp": timestamp
+          };
+          $.ajax({
+            url: "https://script.google.com/macros/s/AKfycbyrndHH6KSLx823OBGWzxCit-t31J3bRMDHU8fZC3_pNSnqwhSkrGcNFS8HLCGs2g/exec",
+            type: "POST",
+            data: data,
+            success: function () {
+              alert("데이터가 성공적으로 전송되었습니다.");
+              location.reload();
+            },
+            error: function () {
+              alert("데이터 전송 중 오류가 발생하였습니다.");
+            }
+          });
+          ;
+        };
+      </script>
+
+      <!-- guestBookWrap - 한 줄 메세지 & 참석 여부-->
       <section class="guestBookWrap" id="guestBookWrap">
         <div class="guestBookInner">
           <div class="secTitleWrap t1">
@@ -671,93 +725,10 @@
             </h2>
             <p class="mt">따뜻한 축하의 마음을<br><strong>참석여부와 함께 전해주세요.</strong></p>
           </div>
-          <div class="mt"> -->
-      <!-- waveText
-            <div class="waveText">
-              <div class="marqWrap"><span></span>
-                <div class="wave">
-                  <div class="img"><span><img
-                        src="https://wedding.dddproject.com/data/file/order_form/3731114314_IgbSz6ou_56c8f05e7f89d6ef50aaeee45d8e7b7039c74ac5.png"
-                        alt="얼굴"></span></div>
-                  <div class="txt">123123123</div>
-                  <div class="guestName">ggg</div>
-                </div>
-                <div class="wave">
-                  <div class="img"><span><img
-                        src="https://wedding.dddproject.com/data/file/order_form/3731114314_9PS7nwUW_b6e1111af1baa2dbb992d0089ae1a321cf633600.png"
-                        alt="얼굴"></span></div>
-                  <div class="txt">jkjk</div>
-                  <div class="guestName">kk</div>
-                </div>
-                <div class="wave">
-                  <div class="img"><span><img
-                        src="https://wedding.dddproject.com/data/file/order_form/3731114314_IgbSz6ou_56c8f05e7f89d6ef50aaeee45d8e7b7039c74ac5.png"
-                        alt="얼굴"></span></div>
-                  <div class="txt">축하해요</div>
-                  <div class="guestName">슝</div>
-                </div>
-                <div class="wave">
-                  <div class="img"><span><img
-                        src="https://wedding.dddproject.com/data/file/order_form/3731114314_IgbSz6ou_56c8f05e7f89d6ef50aaeee45d8e7b7039c74ac5.png"
-                        alt="얼굴"></span></div>
-                  <div class="txt">ㅋㅋ</div>
-                  <div class="guestName">ㅋ</div>
-                </div>
-                <div class="wave">
-                  <div class="img"><span><img
-                        src="https://wedding.dddproject.com/data/file/order_form/3731114314_IgbSz6ou_56c8f05e7f89d6ef50aaeee45d8e7b7039c74ac5.png"
-                        alt="얼굴"></span></div>
-                  <div class="txt">축하합니다</div>
-                  <div class="guestName">호호</div>
-                </div>
-                <div class="wave">
-                  <div class="img"><span><img
-                        src="https://wedding.dddproject.com/data/file/order_form/3731114314_9PS7nwUW_b6e1111af1baa2dbb992d0089ae1a321cf633600.png"
-                        alt="얼굴"></span></div>
-                  <div class="txt">축하</div>
-                  <div class="guestName">ㅇ</div>
-                </div>
-                <div class="wave">
-                  <div class="img"><span><img
-                        src="https://wedding.dddproject.com/data/file/order_form/3731114314_9PS7nwUW_b6e1111af1baa2dbb992d0089ae1a321cf633600.png"
-                        alt="얼굴"></span></div>
-                  <div class="txt">기범아 안녕❤️</div>
-                  <div class="guestName">우니</div>
-                </div>
-                <div class="wave">
-                  <div class="img"><span><img
-                        src="https://wedding.dddproject.com/data/file/order_form/3731114314_IgbSz6ou_56c8f05e7f89d6ef50aaeee45d8e7b7039c74ac5.png"
-                        alt="얼굴"></span></div>
-                  <div class="txt">은영아 안녕</div>
-                  <div class="guestName">기붐</div>
-                </div>
-                <div class="wave">
-                  <div class="img"><span><img
-                        src="https://wedding.dddproject.com/data/file/order_form/3731114314_IgbSz6ou_56c8f05e7f89d6ef50aaeee45d8e7b7039c74ac5.png"
-                        alt="얼굴"></span></div>
-                  <div class="txt">잘생겼다^6^ 추카츄</div>
-                  <div class="guestName">이쁜이</div>
-                </div>
-                <div class="wave">
-                  <div class="img"><span><img
-                        src="https://wedding.dddproject.com/data/file/order_form/3731114314_9PS7nwUW_b6e1111af1baa2dbb992d0089ae1a321cf633600.png"
-                        alt="얼굴"></span></div>
-                  <div class="txt">축하</div>
-                  <div class="guestName">ㄸ</div>
-                </div>
-                <div class="wave">
-                  <div class="img"><span><img
-                        src="https://wedding.dddproject.com/data/file/order_form/3731114314_9PS7nwUW_b6e1111af1baa2dbb992d0089ae1a321cf633600.png"
-                        alt="얼굴"></span></div>
-                  <div class="txt">결혼 너무너무 축하해!! 사진 진짜 존예보스🙊💕</div>
-                  <div class="guestName">박정은</div>
-                </div>
-              </div>
-            </div>
-            //waveText -->
-      <!-- comWrap 
-            <div class="comWrap"> -->
-      <!-- inputWrap 
+          <div class="mt">
+            <!-- comWrap  -->
+            <div class="comWrap">
+              <!-- inputWrap  -->
               <div class="inputWrap">
                 <form name="fguest_book" id="fguest_book" onsubmit="return false">
                   <input type="hidden" name="gb_to" id="gb_to" value="tpl_maleface"><input type="hidden" name="ca_name"
@@ -768,9 +739,7 @@
                       <div class="selBox">
                         <ul class="list">
                           <li>
-                            <input type="radio" checked name="send" id="h02"
-                              value="https://wedding.dddproject.com/data/file/order_form/3731114314_IgbSz6ou_56c8f05e7f89d6ef50aaeee45d8e7b7039c74ac5.png"
-                              data-gb_to="tpl_maleface">
+                            <input type="radio" checked name="send" id="h02" value="신랑" data-gb_to="tpl_maleface">
                             <label for="h02">
                               <div class="img"><img
                                   src="https://wedding.dddproject.com/data/file/order_form/3731114314_IgbSz6ou_56c8f05e7f89d6ef50aaeee45d8e7b7039c74ac5.png"
@@ -778,9 +747,7 @@
                             </label>
                           </li>
                           <li>
-                            <input type="radio" name="send" id="h01"
-                              value="https://wedding.dddproject.com/data/file/order_form/3731114314_9PS7nwUW_b6e1111af1baa2dbb992d0089ae1a321cf633600.png"
-                              data-gb_to="tpl_femaleface">
+                            <input type="radio" name="send" id="h01" value="신부" data-gb_to="tpl_femaleface">
                             <label for="h01">
                               <div class="img"><img
                                   src="https://wedding.dddproject.com/data/file/order_form/3731114314_9PS7nwUW_b6e1111af1baa2dbb992d0089ae1a321cf633600.png"
@@ -790,23 +757,60 @@
                         </ul>
                       </div>
                     </div>
+                    <input type="text" id="name-input_gb" name="name-input_gb" class="inputBox ipText" placeholder="이름"
+                      maxlength="10">
                     <div class="inputBox">
                       <input type="text" name="gb_comment" id="gb_comment" class="ipText"
                         placeholder="축하 메시지를 입력해주세요. (최대 40자)" maxlength="40">
-                      <div class="btnComment">
-                        <a href="javascript:;" class="any">전송</a>
+
+                      <div class="btnComment" id="1212">
+                        <a href="javascript:startsend();" class="any">전dd송</a>
                       </div>
+
+
+
                     </div>
                   </div>
                 </form>
+
               </div>
-              //inputWrap 
-            </div>-->
-      <!-- //comWrap 
+              <!-- //inputWrap -->
+              <div id="data"></div>
+              <script>
+                // API 주소
+                const apiUrl =
+                  "https://script.google.com/macros/s/AKfycbxSeCqZz3L82StT285iwk677JA_UtoGTlrB2Ko7k974LHi--4kaSMTz-aqCIBIlelI/exec?sheetName=guestbook";
+
+                // JSON 데이터 가져오기
+                fetch(apiUrl)
+                  .then((response) => response.json())
+                  .then((data) => {
+                    // 데이터 timestamp를 기준으로 내림차순 정렬하기
+                    data.data.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+
+                    // 데이터 HTML에 출력하기
+                    const dataContainer = document.getElementById("data");
+                    data.data.forEach((item) => {
+                      const timestamp = new Date(item.timestamp).toLocaleString('ko-KR', { year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric' });
+                      const html = `<div class="data-item">
+                         <div class="groomOrBride">${item.groomOrBride}</div>
+                          <div class="timestamp">${timestamp}</div>
+                          <div class="name">${item.name}</div>
+                          <div class="text">${item.text}</div>
+                        </div>`;
+                      dataContainer.innerHTML += html;
+                    });
+                  });
+              </script>
+            </div>
+
           </div>
         </div>
-      </section>-->
+      </section>
       <!-- //guestBookWrap -->
+
+
+
       <!-- thanksWrap - 감사인사 -->
       <section class="thanksWrap" id="thanksWrap">
         <div class="thanksInner">
