@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Guestbook</title>
+    <script src="key.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+    
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            padding: 20px;
+          }
+          
+          h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+          }
+          
+          form {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+          }
+          
+          input, select, button {
+            font-family: 'Noto Sans KR', sans-serif;
+            font-size: 16px;
+            padding: 6px 12px;
+            margin-right: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+          }
+          
+          button {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+          }
+          
+          button:hover {
+            background-color: #45a049;
+          }
+          
+          h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+          }
+          
+          ul {
+            list-style-type: none;
+            padding: 0;
+          }
+          
+          li {
+            border-bottom: 1px solid #ccc;
+            padding: 10px;
+            opacity: 1;
+            transition: opacity 0.5s;
+          }
+          
+          li.fadein {
+            opacity: 0;
+          }
+    </style>
+    <script>
+        const firebaseAPIKEYS = config;
+        //console.log(firebaseAPIKEYS.apiKey)
+      // Firebase 프로젝트의 설정 정보
+      var firebaseConfig = {
+        apiKey: firebaseAPIKEYS.apiKey,
+        authDomain: firebaseAPIKEYS.authDomain,
+        databaseURL: firebaseAPIKEYS.databaseUR,
+        projectId: firebaseAPIKEYS.projectId,
+        storageBucket: firebaseAPIKEYS.storageBucket,
+        messagingSenderId: firebaseAPIKEYS.messagingSenderId,
+        appId: firebaseAPIKEYS.appId,
+        measurementId: firebaseAPIKEYS.measurementId
+      };
+      
+      // Firebase 프로젝트 초기화
+      firebase.initializeApp(firebaseConfig);
+      
+      // Firebase Firestore 데이터베이스 참조 생성
+      var db = firebase.firestore();
+      var guestbookRef = db.collection("guestbook");
+      
+      // 방명록 목록 업데이트
+      function updateGuestbookList(querySnapshot) {
+        var guestbookList = document.querySelector("#guestbook-list");
+        guestbookList.innerHTML = "";
+        querySnapshot.forEach(function (doc) {
+          var data = doc.data();
+          var name = data.name || "익명";
+          var gender = data.gender;
+          var message = data.message;
+          var listItem = document.createElement("li");
+          listItem.innerHTML = "<strong>" + name + " (" + gender + ")</strong>: " + message;
+          guestbookList.appendChild(listItem);
+        });
+      }
+      
+      // 방명록 데이터 추가
+      function writeGuestbookData(name, gender, message) {
+        guestbookRef.add({
+          name: name,
+          gender: gender,
+          message: message,
+          timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+        }).then(function (docRef) {
+          // 새로운 데이터만 페이드인 효과 적용
+          var listItem = document.createElement("li");
+          listItem.innerHTML = "<strong>" + name + " (" + gender + ")</strong>: " + message;
+          listItem.classList.add("fadein");
+          var guestbookList = document.querySelector("#guestbook-list");
+          guestbookList.insertBefore(listItem, guestbookList.firstChild);
+          setTimeout(function () {
+            listItem.classList.remove("fadein");
+          }, 100);
+        });
+      }
+      
+      // 폼 제출 처리
+      function handleSubmit(event) {
+        event.preventDefault();
+        var nameInput = document.querySelector("#name-input");
+        var genderInput = document.querySelector("#gender-input");
+        var messageInput = document.querySelector("#message-input");
+        var name = nameInput.value;
+        var gender = genderInput.value;
+        var message = messageInput.value;
+        writeGuestbookData(name, gender, message);
+        nameInput.value = "";
+        genderInput.value = "남";
+        messageInput.value = "";
+        }
+      // 방명록 목록 업데이트 리스너 등록
+  guestbookRef.orderBy("timestamp", "desc").onSnapshot(updateGuestbookList);
+</script>
+</head>
+<body>
+  <h1>Guestbook</h1>
+  <form id="guestbook-form" onsubmit="handleSubmit(event)">
+    <input type="text" id="name-input" placeholder="이름" required />
+    <select id="gender-input" required>
+      <option value="남">남</option>
+      <option value="여">여</option>
+    </select>
+    <input type="text" id="message-input" placeholder="메시지" required />
+    <button type="submit">작성하기</button>
+  </form>
+  <h2>방명록 목록</h2>
+  <ul id="guestbook-list"></ul>
+</body>
+</html>
