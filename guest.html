@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <title>Guestbook</title>
-    <script src="key.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
     
@@ -68,18 +67,15 @@
           }
     </style>
     <script>
-        const firebaseAPIKEYS = config;
-        //console.log(firebaseAPIKEYS.apiKey)
-      // Firebase 프로젝트의 설정 정보
       var firebaseConfig = {
-        apiKey: firebaseAPIKEYS.apiKey,
-        authDomain: firebaseAPIKEYS.authDomain,
-        databaseURL: firebaseAPIKEYS.databaseUR,
-        projectId: firebaseAPIKEYS.projectId,
-        storageBucket: firebaseAPIKEYS.storageBucket,
-        messagingSenderId: firebaseAPIKEYS.messagingSenderId,
-        appId: firebaseAPIKEYS.appId,
-        measurementId: firebaseAPIKEYS.measurementId
+        apiKey: ${{ secrets.APIKEY }},
+        authDomain: ${{ secrets.AUTHDOMAIN }},
+        databaseURL: ${{ secrets.DATABASEURL }},
+        projectId: ${{ secrets.PROJECTID }},
+        storageBucket: ${{ secrets.STORAGEBUCKET }},
+        messagingSenderId: ${{ secrets.MESSAGINGSENDERID }},
+        appId: ${{ secrets.APPID }},
+        measurementId: ${{ secrets.MEASUREMENTID }}
       };
       
       // Firebase 프로젝트 초기화
