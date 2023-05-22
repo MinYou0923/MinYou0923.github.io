@@ -62,7 +62,7 @@ body.noScroll {overflow: hidden;position: fixed;width: 100%;height: 100%;}
 .mindWrap .mindInner,
 .locationWrap .addrWrap,
 .infoLoca .inner{max-width: 540px;margin: 0 auto;}
-
+/*
 .ranTxt .ran{transition:2s all; opacity:0;letter-spacing: 0 !important}
 .ranTxt .ran.r1 {transition-delay:50ms;}
 .ranTxt .ran.r2 {transition-delay:80ms;}
@@ -73,18 +73,7 @@ body.noScroll {overflow: hidden;position: fixed;width: 100%;height: 100%;}
 .ranTxt .ran.r7 {transition-delay:2300ms;}
 .ranTxt .ran.r8 {transition-delay:260ms;}
 .ranTxt .ran.r9 {transition-delay:290ms;}
-.ranTxt .ran.r10 {transition-delay:320ms;}
-/*
-.ranTxt .ran.r1 {transition-delay:250ms;}
-.ranTxt .ran.r2 {transition-delay:400ms;}
-.ranTxt .ran.r3 {transition-delay:550ms;}
-.ranTxt .ran.r4 {transition-delay:700ms;}
-.ranTxt .ran.r5 {transition-delay:850ms;}
-.ranTxt .ran.r6 {transition-delay:1000ms;}
-.ranTxt .ran.r7 {transition-delay:1150ms;}
-.ranTxt .ran.r8 {transition-delay:1300ms;}
-.ranTxt .ran.r9 {transition-delay:1450ms;}
-.ranTxt .ran.r10 {transition-delay:1600ms;} */
+.ranTxt .ran.r10 {transition-delay:320ms;}*/
 
 .atm .ranTxt .ran{opacity:1;}
 .atm .mt,
@@ -250,7 +239,7 @@ body.snow .fixObWrap .no7 {background:url('../image/snow07.png') center no-repea
 .secTitleWrap .hanTit > span:not(.ran):before,
 .secTitleWrap .hanTit > span:not(.ran):after{content:''; position: absolute; left:0; top:50%; margin-top:-1px;width:2px; height:2px;background:#8b6e76;border-radius:50%; display: none;}
 .secTitleWrap .hanTit > span:not(.ran):after{left: auto;right:0;}
-.secTitleWrap p{font-family: 'AritaBuri';font-size: 27px;color: #000000;text-align: center;margin-top: 13px;line-height: 1.4;letter-spacing:2px; margin-bottom:50px;}
+.secTitleWrap p{font-family: 'AritaBuri';font-size: 27px;color: #000000;text-align: center;margin-top: 13px;line-height: 1.4;letter-spacing:2px; margin-bottom:50px;font-weight: 600;}
 .secTitleWrap.t1 .hanTit{font-size: 14px;letter-spacing:.3em;text-indent: .3em;}
 .secTitleWrap.t1 .hanTit:before,
 .secTitleWrap.t1 .hanTit:after,
@@ -276,7 +265,7 @@ body.snow .fixObWrap .no7 {background:url('../image/snow07.png') center no-repea
 .greetingWrap{text-align:center; padding-top: 100px; background:#fefdfb;}
 .greetingWrap .greetingBox{}
 .greetingWrap .greetingInner{padding-top: 45px;padding-bottom: 100px;}
-.greetingWrap .textBox{font-family: 'AritaBuri';font-size: 25px;color: #222222;line-height: 1.55;}
+.greetingWrap .textBox{font-family: 'AritaBuri';font-weight: 600;font-size: 25px;color: #222222;line-height: 1.55;}
 .greetingWrap .textBox p{margin-bottom: 39px; line-height: 2;}
 
 .greetingWrap .ranBox{position: relative;padding: 37px 0 17px;margin-top: 53px;}
@@ -286,7 +275,7 @@ body.snow .fixObWrap .no7 {background:url('../image/snow07.png') center no-repea
 .greetingWrap .ranBox:after{top:auto;bottom:0;height:1px;background-image:url('../image/bg_thx02.png');}
 .greetingWrap .ranBox .box{padding: 6px 0;font-size: 22px;color: #4f4d4e}
 .greetingWrap .ranBox .box em{font-weight: 600}
-.greetingWrap .ranBox .box strong{font-family: 'AritaBuri';font-size: 25px;color: #222222;font-weight: 400;}
+.greetingWrap .ranBox .box strong{font-family: 'AritaBuri'; font-weight: 600;font-size: 25px;color: #222222;font-weight: 400;}
 .greetingWrap .btns.t1{margin-top: 37px}
 
 .btns{box-sizing:border-box;text-align:center;width: 100%;
@@ -322,7 +311,7 @@ body.snow .fixObWrap .no7 {background:url('../image/snow07.png') center no-repea
 
 .secTitleWrap .hanTit > span:not(.ran):before, .secTitleWrap .hanTit > span:not(.ran):after {background: #e2d3d7;}
 
-.dayWrap .dayBox p{font-family: 'AritaBuri';color: #222222;font-size: 27px;line-height: 1.4; text-align: center;}
+.dayWrap .dayBox p{font-family: 'AritaBuri';font-weight: 600;color: #222222;font-size: 27px;line-height: 1.4; text-align: center;}
 .dayWrap .placeBox{position: relative;padding: 23px 0 22px;margin-bottom: 18px;}
 .dayWrap .placeBox:before,
 .dayWrap .placeBox:after{display: block;content: '';width: 100%;height: 1px;background:url('../image/bg_thx02.png') no-repeat 50% 50%;position: absolute;top:0;left:0}
@@ -425,7 +414,7 @@ body.snow .fixObWrap .no7 {background:url('../image/snow07.png') center no-repea
 
 .infoWrap .infoList .slideList ul li .box{position: relative;}
 .infoWrap .infoList .slideList ul li .box:after{display: block;content: '';position: absolute;width: 100%;height:100%;top:0;left:0;background: url(../image/info_hover.png) no-repeat 50% 0 / 100% auto;opacity: 0;transition: opacity 0.6s}
-.infoWrap .infoList .slideList ul li .tit{position:absolute;top:50%; left:50%;font-size:22px;color: #fff;font-weight: 700;letter-spacing: 0.5em; font-family: 'AritaBuri';transition: all 0.3s ease-in;
+.infoWrap .infoList .slideList ul li .tit{position:absolute;top:50%; left:50%;font-size:22px;color: #fff;font-weight: 600;letter-spacing: 0.5em; font-family: 'AritaBuri';transition: all 0.3s ease-in;
     -webkit-transform: translate(-50%, -50%);
     -moz-transform: translate(-50%, -50%);
     -o-transform: translate(-50%, -50%);
@@ -506,7 +495,7 @@ body.snow .fixObWrap .no7 {background:url('../image/snow07.png') center no-repea
 .comWrap .partyCheck .thxBox,
 .comWrap .partyCheck .complete{overflow: hidden;}
 .comWrap .partyCheck .btn a,
-.comWrap .partyCheck .thxBox{display: block;font-family: 'AritaBuri';font-size: 21px;color:#fff;background:#222222;height: 75px;border-radius: 15px;
+.comWrap .partyCheck .thxBox{display: block;font-family: 'AritaBuri';font-weight: 600;font-size: 21px;color:#fff;background:#222222;height: 75px;border-radius: 15px;
     display: -webkit-box;display: -ms-flexbox;display: -webkit-flex;display: flex;
     -webkit-box-align: center;-ms-flex-align: center;-webkit-align-items: center;align-items: center;
     -webkit-box-pack: center;-ms-flex-pack: center;-webkit-justify-content: center;justify-content: center;
@@ -522,7 +511,7 @@ body.snow .fixObWrap .no7 {background:url('../image/snow07.png') center no-repea
 .contactWrap .coupleBox .box{display: inline-block; vertical-align: top; position: relative; width:50%;padding: 0 30px;box-sizing: border-box}
 .contactWrap .coupleBox .box .tit{margin-bottom: 9px;}
 .contactWrap .coupleBox .box .tit img{height: 10px}
-.contactWrap .coupleBox .box .name{font-family: 'AritaBuri';font-size: 25px;color: #fff;font-weight: 400;display: block;margin-bottom: 23px;}
+.contactWrap .coupleBox .box .name{font-family: 'AritaBuri';font-size: 25px;color: #fff;font-weight: 600;display: block;margin-bottom: 23px;}
 .contactWrap .coupleBox .box.no1 .img:after{content:''; position: absolute; right:-33px;top:50%;margin-top: -5px;width:6px; height:8px; background:url('../image/icon_star2.png') no-repeat;background-size:6px auto;}
 .contactWrap .coupleBox .box .imgTxt .img {margin-bottom: 9px;position: relative}
 .contactWrap .coupleBox .box .imgTxt .img img { pointer-events:none;}
@@ -541,7 +530,7 @@ body.snow .fixObWrap .no7 {background:url('../image/snow07.png') center no-repea
 .mindWrap{background:#f8f8f8;}
 .mindWrap .mindInner{padding-top: 97px;padding-bottom: 100px}
 .mindWrap .secTitleWrap{padding-bottom: 0;margin-bottom: 41px;border-bottom: 1px dotted #b7b7b7}
-.mindWrap .text{text-align: center;font-family: 'AritaBuri';font-size: 21px;color: #222222;line-height: 1.81;margin-bottom: 40px}
+.mindWrap .text{text-align: center;font-family: 'AritaBuri';font-weight: 600;font-size: 21px;color: #222222;line-height: 1.81;margin-bottom: 40px}
 .mindWrap .contBox{border:1px solid #e2e4ea;margin-bottom: 15px}
 .mindWrap .contBox .tit{padding:0 0 1px 24px; position: relative; cursor:pointer; height: 74px; background:#edeef1;box-sizing:border-box;
     display: -webkit-box;display: -ms-flexbox;display: -webkit-flex;display: flex;
@@ -594,7 +583,7 @@ body.snow .fixObWrap .no7 {background:url('../image/snow07.png') center no-repea
 }
 .addrWrap .box:first-child{height: 92px;background: url(../image/bg_thx02.png) no-repeat 50% 100%;}
 .addrWrap .addr,
-.addrWrap .label{font-family: 'AritaBuri';color: #222222;font-size: 22px;padding-left: 29px;letter-spacing:-.05em;}
+.addrWrap .label{font-family: 'AritaBuri';color: #222222;font-size: 22px;font-weight: 600;padding-left: 29px;letter-spacing:-.05em;}
 .addrWrap .addr{font-weight: 600;background: url(../image/icon_location2.png) no-repeat 0 50%;background-size: 15px auto;}
 .addrWrap .label{padding-left: 29px;background: url(../image/icon_guide.png) no-repeat 0 50%;}
 .addrWrap .hall{font-size: 21px;color: #888888;font-weight: 400}
@@ -624,7 +613,7 @@ body.snow .fixObWrap .no7 {background:url('../image/snow07.png') center no-repea
 .thanksWrap .thanksInner{padding-top: 98px;padding-bottom: 40px;text-align: center}
 .thanksWrap .secTitleWrap{margin-bottom: 40px}
 .thanksWrap .secTitleWrap .hanTit{color: #866f76}
-.thanksWrap p{font-family: 'AritaBuri';font-size: 22px;color: #fff;line-height: 1.55;margin-bottom: 34px;}
+.thanksWrap p{font-family: 'AritaBuri';font-size: 22px;color: #fff;line-height: 1.55;margin-bottom: 34px;font-weight: 600;}
 .thanksWrap p:last-child{margin-bottom: 0}
 
 .thanksWrap.none {background:#fff; padding:60px 0;}
@@ -650,7 +639,7 @@ body.snow .fixObWrap .no7 {background:url('../image/snow07.png') center no-repea
 .head{position: fixed;left: 0;top: -90px;width: 100%;height: 90px;background:rgba(252,247,249,.9);z-index: 100;transition:1s all;}
 .head .inner {position: relative; z-index: 1;}
 .head .inner .h1Wrap {position: absolute; left:50px; top:33px;}
-.head .inner .h1Wrap h1 > a {font-family: 'AritaBuri';  font-size:18px;font-weight: 900;color:#000000;transition:.3s all;}
+.head .inner .h1Wrap h1 > a {font-family: 'AritaBuri';  font-size:18px;font-weight: 600;color:#000000;transition:.3s all;}
 .head .inner .btnMenu {position: absolute; right:50px;top:34px;}
 .head .inner .btnMenu a{display: inline-block; vertical-align: top; width:25px; height:22px; background:url('../image/icon_menu.png') center no-repeat; text-indent:-999em;}
 
@@ -785,7 +774,7 @@ body.showSlide .popSlide{opacity:1; visibility:visible;}
 .popSlide .swiper-button-prev,
 .popSlide .swiper-button-next{width: 64px;height: 64px;position: absolute;top:50%;left:50px;margin-top: -32px;background:url('../image/btnGalBigLeft.png') 0 0 no-repeat;}
 .popSlide .swiper-button-next{background-image:url('../image/btnGalBigRight.png');left: auto;right: 50px}
-.popSlide .swiper-pagination-fraction{font-family: 'AritaBuri';font-style: italic;font-size: 22px;font-weight: 700;color: rgba(255,255,255,.5);position: absolute;bottom: 43px;width: auto;left:auto;right:50px}
+.popSlide .swiper-pagination-fraction{font-family: 'AritaBuri';font-style: italic;font-size: 22px;font-weight: 600;color: rgba(255,255,255,.5);position: absolute;bottom: 43px;width: auto;left:auto;right:50px}
 .popSlide .swiper-pagination-fraction .swiper-pagination-current,
 .popSlide .swiper-pagination-fraction .swiper-pagination-total{font-family: 'EB Garamond';font-size: 28px;font-weight: 300;color: rgba(255,255,255,.5);font-style: normal;position: relative;top:1px;}
 .popSlide .swiper-pagination-fraction .swiper-pagination-current{color: #fff;font-weight: 700;margin-right: 5px;}
@@ -896,7 +885,7 @@ body.showImg .popImg{visibility: visible;opacity: 1}
 
   .mainVisual .titleWrap {position: absolute; left:40px; bottom:80px; text-align: center; color:#fff;box-sizing: border-box;display: table;width: 100%;}
   .mainVisual .titleWrap .in{display: table-cell;vertical-align: middle;text-align: left;}
-  .mainVisual .titleWrap .topText {position: relative; display: inline-block;padding-right:25px; font-family: 'AritaBuri';}
+  .mainVisual .titleWrap .topText {position: relative; display: inline-block;padding-right:25px; font-family: 'AritaBuri';font-weight: 600;}
   .mainVisual .titleWrap .topText:after,
   .mainVisual .titleWrap .topText .name:after{display: block;content: '';clear: both}
   .mainVisual .titleWrap .topText .tit01,
@@ -995,7 +984,7 @@ body.showImg .popImg{visibility: visible;opacity: 1}
     .galleryWrap .galWrap .videoImg .btnPlay{width: 80px;height: 80px;background-size: cover;margin:-40px 0 0 -40px;}
     .galleryWrap .galWrap .videoImg + .gallery .galList .col li:first-child{margin-left: 0}
     .galleryWrap .galWrap .galList .col ul{margin: 0 -3px}
-    .galleryWrap .galWrap .galList .col li{width: 50%;padding: 0 3px;margin-bottom: 6px}
+    .galleryWrap .galWrap .galList .col li{width: 50%;padding: 0 6px;margin-bottom: 12px}
     .galleryWrap .galWrap .galList .hover{margin: -25px 0 0 -25px;border-width:1px;background-image: url(../image/gal_hover2_m.png);background-size: 12px 12px;width: 50px;height: 50px;}
     .galleryWrap .galWrap .more{margin-top: 17px;}
     
