@@ -387,6 +387,8 @@ $(function () {
         alertOpen_skin('계좌번호가 복사되었습니다.');
     });
 
+    
+
     //인터뷰 더보기
     $('.interPop .popCont .inner .more span').click(function () {
         $('.interPop .popCont .inner .hidden').fadeIn('slow');
