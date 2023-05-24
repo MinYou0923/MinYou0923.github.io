@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>RSVP 페이지</title>
+    <style>
+        /* CSS 스타일을 추가하여 모달 창 스타일링 가능 */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>RSVP 페이지</h1>
+
+    <!-- RSVP 버튼 -->
+    <button id="rsvp-button">RSVP</button>
+
+    <!-- RSVP 모달 -->
+    <div id="rsvp-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>RSVP 모달 창</h2>
+            <form id="rsvp-form">
+                <label for="guest-type">구분:</label>
+                <select id="guest-type" required>
+                    <option value="신랑측">신랑측</option>
+                    <option value="신부측">신부측</option>
+                </select>
+                <br>
+                <label for="name">성함:</label>
+                <input type="text" id="name" required>
+                <br>
+                <label for="attendees">참석인원:</label>
+                <input type="number" id="attendees" required>
+                <br>
+                <label for="meal">식사 여부:</label>
+                <select id="meal" required>
+                    <option value="예정">예정</option>
+                    <option value="안함">안함</option>
+                    <option value="미정">미정</option>
+                </select>
+                <br>
+                <button type="submit">참석의사 전달하기</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+    <script>
+        // 파이어베이스 초기화
+        const firebaseConfig = {
+            // Firebase 설정 정보 입력
+            apiKey: "AIzaSyAIkEs4XtlH2Ihin6R-v5mCaQGiWEgQB34",
+            authDomain: "guestbook-54a28.firebaseapp.com",
+            databaseURL: "https://guestbook-54a28-default-rtdb.firebaseio.com",
+            projectId: "guestbook-54a28",
+            storageBucket: "guestbook-54a28.appspot.com",
+            messagingSenderId: "88488473479",
+            appId: "1:88488473479:web:4ad7b82b3647a556c41922",
+            measurementId: "G-RMQ312150L"
+        };
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+
+        // RSVP 버튼 클릭 시 모달 창 열기
+        document.getElementById("rsvp-button").addEventListener("click", function () {
+            document.getElementById("rsvp-modal").style.display = "block";
+        });
+
+        // 모달 닫기 버튼 클릭 시 모달 창 닫기
+        document.getElementsByClassName("close")[0].addEventListener("click", function () {
+            document.getElementById("rsvp-modal").style.display = "none";
+        });
+
+        // RSVP 양식 제출 시 데이터 저장
+        document.getElementById("rsvp-form").addEventListener("submit", function (event) {
+            event.preventDefault(); // 폼 제출 기본 동작 방지
+
+            // 입력된 값 가져오기
+            const guestType = document.getElementById("guest-type").value;
+            const name = document.getElementById("name").value;
+            const attendees = document.getElementById("attendees").value;
+            const meal = document.getElementById("meal").value;
+
+            // 데이터 저장
+            db.collection("rsvp").add({
+                guestType: guestType,
+                name: name,
+                attendees: attendees,
+                meal: meal,
+                timestamp: firebase.firestore.FieldValue.serverTimestamp()
+            }).then(function (docRef) {
+                console.log("RSVP 데이터가 성공적으로 저장되었습니다.");
+                // 여기에 필요한 추가 동작을 수행하세요 (예: 모달 닫기, 메시지 표시 등)
+                document.getElementById("rsvp-modal").style.display = "none";
+            }).catch(function (error) {
+                console.error("RSVP 데이터 저장 중 오류 발생:", error);
+                // 여기에 오류 처리 동작을 수행하세요 (예: 오류 메시지 표시 등)
+            });
+        });
+    </script>
+</body>
+
+</html>
