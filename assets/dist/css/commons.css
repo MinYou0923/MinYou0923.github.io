@@ -562,13 +562,13 @@ body.snow .fixObWrap .no7 {background:url('../image/snow07.png') center no-repea
 .mindWrap .mindInner{padding-top: 97px;padding-bottom: 100px}
 .mindWrap .secTitleWrap{padding-bottom: 0;margin-bottom: 41px;border-bottom: 1px dotted #b7b7b7}
 .mindWrap .text{text-align: center;font-family: 'AritaBuri';font-weight: 600;font-size: 21px;color: #222222;line-height: 1.81;margin-bottom: 40px}
-.mindWrap .contBox{border:1px solid #e2e4ea;margin-bottom: 15px}
+.mindWrap .contBox{border:1px solid #e2e4ea;margin-bottom: 15px ;border-radius: 10px;}
 .mindWrap .contBox .tit{padding:0 0 1px 24px; position: relative; cursor:pointer; height: 74px; background:#edeef1;box-sizing:border-box;
-    display: -webkit-box;display: -ms-flexbox;display: -webkit-flex;display: flex;
+    display: -webkit-box;display: -ms-flexbox;display: -webkit-flex;display: flex;border-radius: 10px;
     -webkit-box-align: center;-ms-flex-align: center;-webkit-align-items: center;align-items: center;
 }
-.mindWrap .contBox.active .tit{border-bottom:1px dashed #dbddcf;}
-.mindWrap .contBox .tit span{font-size:19px;color:#262f3c; font-weight: 500; padding-left:27px; background:url(../image/mind01_1.png) 0 50% no-repeat;background-size: 16px 16px }
+.mindWrap .contBox.active .tit{border-bottom:1px dashed #dbddcf;border-radius: 10px 10px 0px 0px;}
+.mindWrap .contBox .tit span{font-size:19px;color:#262f3c; font-weight: 500; padding-left:27px;background-size: 16px 16px }
 .mindWrap .contBox .tit:after{content:''; position: absolute; right:23px; top:50%; margin-top:-4px;width:12px; height:8px; background:url(../image/mind02-1.png) 0 0 no-repeat;background-size: 12px auto}
 .mindWrap .contBox.active .tit:after{transform:rotate(180deg);}
 .mindWrap .contBox.active .toggle{display: block;}
@@ -583,16 +583,17 @@ body.snow .fixObWrap .no7 {background:url('../image/snow07.png') center no-repea
 .mindWrap .contBox .toggle .info .name{font-weight:300;color:#000;font-size:15px;}
 .mindWrap .contBox .toggle .info .name em{font-size:19px;color:#000;font-weight:500;}
 .mindWrap .contBox .toggle .btn {display:flex; justify-content:center; text-align: center;}
-.mindWrap .contBox .toggle .btn button {width:49.02%;border-radius:12px;text-align: center;height:48px;background:#fff;font-size:16px;color:#222;font-weight:500;border:none;}
+.mindWrap .contBox .toggle .btn button {width:100%;border-radius:12px;text-align: center;height:48px;background:#fff;font-size:16px;color:#222;font-weight:500;border:none;}
 .mindWrap .contBox .toggle .btn button.no1 {background:#fae14b;}
 .mindWrap .contBox .toggle .btn button.no1 span{padding-left:40px;background:url(../image/mind03.png) 0 50% no-repeat;background-size:34px auto;}
 .mindWrap .contBox .toggle .btn button.no3 {background:#0064FF;margin-left:2.04%;}
 .mindWrap .contBox .toggle .btn button.no3 span{padding-left:40px;color:#ffffff;background:url(../image/Toss_Logo.png) 0 50% no-repeat;background-size:34px auto;}
 .mindWrap .contBox .toggle .btn button.no2 {margin-left:2.04%;}
+.mindWrap .contBox .toggle .btn button.no4 {margin-left:0%;}
 .mindWrap .contBox .toggle .btn button.no2 span{padding-left:25px;background:url(../image/mind04.png) 0 50% no-repeat;background-size:17px auto;}
 .mindWrap .contBox.bride {border:1px solid #ede9ea;margin-bottom: 0}
 .mindWrap .contBox.bride .tit {background:#f7f3f4}
-.mindWrap .contBox.bride .tit span {color:#734050; background:url(../image/mind01-2.png) 0 50% no-repeat;background-size: 16px 16px;}
+.mindWrap .contBox.bride .tit span {color:#734050; background-size: 16px 16px;}
 .mindWrap .contBox.bride .tit:after {background-image:url(../image/mind02-2.png);}
 .mindWrap .contBox.bride .toggle {background:#f2f0f0;border-bottom-color: #ddd6cd}
 .mindWrap .contBox.bride.active .tit{border-bottom:1px dashed #ddd6cd;}
@@ -621,7 +622,7 @@ body.snow .fixObWrap .no7 {background:url('../image/snow07.png') center no-repea
 .addrWrap .addr + .btn{-webkit-flex-shrink: 0;-ms-flex-negative: 0;flex-shrink: 0;}
 .addrWrap .clipboard{width: 20px}
 
-.infoLoca{background-color: #f9f9f9;padding-bottom: 95px;}
+.infoLoca{padding-bottom: 95px;}
 .infoLoca .box{border-bottom: 1px solid #e0e0e0;padding-top: 37px;padding-bottom: 35px}
 .infoLoca .box:nth-child(1){padding-bottom: 40px}
 .infoLoca .box:last-child{border-bottom: 0;padding-bottom: 0}
@@ -960,7 +961,7 @@ body.showImg .popImg{visibility: visible;opacity: 1}
     .greetingWrap .ranBox .box strong{font-size: 19px}
     .greetingWrap .btns.t1{margin-top: 25px;}
     
-    .btns.t1{font-size: 13px;height: 50px;border-radius: 8px;}
+    .btns.t1{font-size: 13px;height: 40px;border-radius: 8px;margin-top: 5px;border: 1px solid #eaeaea;}
     .btns_call{font-size: 14px;height: 40px;border-radius: 60px; width: 200px;margin:auto;display:block;margin-top: 10px;}
     .btns.t1 span{padding-left: 22px;}
     .btns.t1 span:before{width: 15px;height: 12px;margin-top: -6px;background-image: url(../image/icon_msg_m.png);background-size: cover}
@@ -969,9 +970,11 @@ body.showImg .popImg{visibility: visible;opacity: 1}
     .btns.t1 span.roughMap,
     .btns.t1 span.img,
     .btns.t1 span.tel{padding-left: 20px;}
+    .btns.t1 span.check{padding-left: 20px;}
     .btns.t1 span.roughMap:before,
     .btns.t1 span.img:before{width: 15px;height: 15px;background-image: url(../image/icon_map_m.png);margin-top: -8px;background-size: auto 15px;}
     .btns.btns_call span.tel:before{width: 15px;height: 15px;background-image: url(../image/icon_tel_m.png);margin-top: -8px;background-size: auto 15px;}
+    .btns.btns_call span.check:before{width: 15px;height: 15px;background-image: url(../image/icon_check_m.png);margin-top: -8px;background-size: auto 15px;}
     .btns.t1 span.img:before{background-image: url(../image/icon_img_m.png);}
 
     
@@ -1108,7 +1111,7 @@ body.showImg .popImg{visibility: visible;opacity: 1}
     .mindWrap .contBox .toggle .info{font-size: 13px}
     .mindWrap .contBox .toggle .info .bank em{font-size: 12px}
     .mindWrap .contBox .tit{height: 50px;}
-    .mindWrap .contBox .tit span{padding-left: 24px;line-height: 1.5;}
+    .mindWrap .contBox .tit span{padding-left: 0px;line-height: 1.5;}
     .mindWrap .contBox .toggle .info{margin-bottom: 15px;}
     .mindWrap .contBox .toggle .info .name{font-size: 10px}
     .mindWrap .contBox .toggle .info .name em{font-size: 13px;}
