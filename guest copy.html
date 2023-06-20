@@ -158,14 +158,10 @@
     }
 
     .card {
-      position: relative;
-      padding: 0.75rem 1rem;
-      text-align: left;
-      line-height: 1.5rem;
-      background: hsla(0, 0%, 100%, .75);
+      border: 1px solid #ccc;
       border-radius: 8px;
-      margin-bottom: 6px;
-      box-shadow: 1px 1px 2px rgb(0 0 0/5%);
+      padding: 10px;
+      margin-bottom: 10px;
     }
 
     .card-content {
@@ -179,60 +175,6 @@
 
     .delete-button {
       /*float: right;*/
-    }
-  </style>
-
-  <style>
-    .c-guestbook {
-      margin: 0;
-      font-size: .86rem;
-    }
-
-    .gothic {
-      font-family: var(--font-gothic), BlinkMacSystemFont, Apple SD Gothic Neo, Helvetica Neue, Helvetica, Arial, Malgun Gothic, "\B9D1\C740 \ACE0\B515", Dotum, 돋움, sans-serif;
-      letter-spacing: var(--font-gothic-spacing);
-    }
-
-    .c-guestbook .comments {
-      padding: 0 var(--common-margin-lr);
-      border: var(--border-size) solid var(--border-color);
-      border-left: 0;
-      border-right: 0;
-    }
-
-    .fade-in {
-      transition: all .8s ease-out;
-      box-sizing: border-box;
-    }
-
-    .c-guestbook .item {
-      position: relative;
-      padding: 0.75rem 1rem;
-      text-align: left;
-      line-height: 1.5rem;
-      background: hsla(0, 0%, 100%, .75);
-      border-radius: 8px;
-      margin-bottom: 6px;
-      box-shadow: 1px 1px 2px rgb(0 0 0/5%);
-    }
-
-    .c-guestbook .item .close {
-      position: absolute;
-      top: 1.2rem;
-      right: 1rem;
-      line-height: 0;
-      text-align: center;
-      cursor: pointer;
-    }
-
-    .c-guestbook .item .name {
-      font-weight: 600;
-      font-size: .8rem;
-      margin-bottom: 0.25rem;
-    }
-
-    .c-guestbook .item .text {
-      line-height: 1.25rem;
     }
   </style>
   <script>
@@ -254,6 +196,7 @@
     // Firestore database reference
     var db = firebase.firestore();
     var guestbookRef = db.collection("guestbook");
+
     // Update guestbook list
     function updateGuestbookList(querySnapshot) {
       var guestbookList = document.querySelector("#guestbook-list");
@@ -265,33 +208,28 @@
         var message = data.message;
         var timestamp = data.timestamp ? data.timestamp.toDate().toLocaleString() : "";
 
-        var cardContainer = document.createElement("div");
-        cardContainer.classList.add("card-container");
-
         var card = document.createElement("div");
         card.classList.add("card");
 
         var cardContent = document.createElement("div");
         cardContent.classList.add("card-content");
-        cardContent.innerHTML = "<div class='gender'>" + gender + "</div><div class='name'>" + name + "</div><div class='message'>" + message + "</div>";
+        cardContent.innerHTML = "<strong>(" + gender + ")" + name + " </strong>: " + message;
 
         var cardTimestamp = document.createElement("div");
         cardTimestamp.classList.add("card-timestamp");
         cardTimestamp.textContent = timestamp;
 
-
-        var deleteButton = document.createElement("div");
+        var deleteButton = document.createElement("button");
         deleteButton.classList.add("delete-button");
         deleteButton.textContent = "X";
         deleteButton.onclick = function () {
           showDeleteModal(doc.id);
         };
 
+        cardContent.appendChild(cardTimestamp);
         card.appendChild(cardContent);
-        card.appendChild(cardTimestamp);
         card.appendChild(deleteButton);
-        cardContainer.appendChild(card);
-        guestbookList.appendChild(cardContainer);
+        guestbookList.appendChild(card);
       });
     }
 

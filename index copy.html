@@ -832,7 +832,7 @@
           line-height: 1.25rem;
         }
       </style>
-      <!-- guestBookWrap - 한 줄 메세지 & 참석 여부
+      <!-- guestBookWrap - 한 줄 메세지 & 참석 여부 -->
       <section class="guestBookWrap" id="guestBookWrap">
         <div class="guestBookInner">
           <div class="secTitleWrap t1" style="border-bottom: 0px;">
@@ -841,7 +841,7 @@
             </p>
             <p>따듯한 축하의 마음을 남겨주세요 :)</p>
           </div>
-          
+
           <div class="mt">
 
             <div class="comWrap">
@@ -875,7 +875,7 @@
                         style="width: 100%; margin-bottom:8px;padding: 17px;font-size: 13px;">
                       <input type="text" id="pw-input_gb" name="pw-input_gb" class="inputBox ipText" placeholder="비밀번호"
                         maxlength="20"
-                        style="width: 30%; padding:10px; margin-bottom:8px;padding: 17px;font-size: 13px;">
+                        style="float: right; width: 30%; padding:10px; margin-bottom:8px;padding: 17px;font-size: 13px;">
                     </div>
 
                     <div class="inputBox">
@@ -892,95 +892,66 @@
                   </div>
                 </form>
               </div>
-
-          <ul id="guestbook-list" style="card"></ul>
-
-          <div>
-            <div class="c-guestbook gothic">
-              <div class="comments fade-in" style="opacity: 1; transform: translate(0px, 0px);">
-                <div class="item white">
-                  <div class="close"><span class="date"
-                      style="position: absolute;top: 55%; left: -500%;">2023.03.22</span> <span class="icon"><svg
-                        width="15px" height="15px" viewBox="0 0 15 15" fill="black" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                          d="M6.7929 7.49998L1.14645 1.85353L1.85356 1.14642L7.50001 6.79287L13.1465 1.14642L13.8536 1.85353L8.20711 7.49998L13.8536 13.1464L13.1465 13.8535L7.50001 8.20708L1.85356 13.8535L1.14645 13.1464L6.7929 7.49998Z">
-                        </path>
-                      </svg></span></div>
-                  <div class="name">Yoon</div>
-                  <div class="text">드뎌 부부 🙊 행복하세요 💓</div>
+              <div>
+                <div class="c-guestbook gothic">
+                  <div class="comments fade-in" style="opacity: 1; transform: translate(0px, 0px);">
+                    <div class="item white">
+                      <div class="close"><span class="date"
+                          style="position: absolute;top: 55%; left: -500%;">2023.03.22</span> <span class="icon"><svg
+                            width="15px" height="15px" viewBox="0 0 15 15" fill="black"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M6.7929 7.49998L1.14645 1.85353L1.85356 1.14642L7.50001 6.79287L13.1465 1.14642L13.8536 1.85353L8.20711 7.49998L13.8536 13.1464L13.1465 13.8535L7.50001 8.20708L1.85356 13.8535L1.14645 13.1464L6.7929 7.49998Z">
+                            </path>
+                          </svg></span></div>
+                      <div class="name">Yoon</div>
+                      <div class="text">드뎌 부부 🙊 행복하세요 💓</div>
+                    </div>
+                  </div>
+                  <div class="tools fade-in" style="opacity: 1; transform: translate(0px, 0px);">
+                    <div class="pagination-wrap"></div>
+                    <div class="writing"><button class="m-button dark gothic">
+                        작성하기
+                      </button></div>
+                  </div>
                 </div>
-
-
-                <form id="guestbook-form" onsubmit="handleSubmit(event)">
-                  <select id="gender-input" required>
-                    <option value="신랑에게">신랑에게</option>
-                    <option value="신부에게">신부에게</option>
-                  </select>
-                  <input type="text" id="name-input" placeholder="이름" required />
-                  <input type="password" id="password-input" placeholder="비밀번호" required /><br />
-                  <textarea id="message-input" type="text" style=" width: 100%;" placeholder="메시지" rows="2"
-                    required></textarea>
-                  <button style=" width: 100%; type=" submit">작성</button>
-                </form>-->
-
-
-
-      <!-- Delete confirmation modal --> <!--
-          <div id="delete-modal" class="modal">
-            <div class="modal-content">
-              <h2>비밀번호 확인</h2>
-              <input type="password" id="delete-password-input" placeholder="비밀번호" required />
-              <div class="modal-button-container">
-                <button id="delete-confirm-button">확인</button>
-                <button onclick="hideModal()">취소</button>
               </div>
-            </div>
-          </div>
-        </div>
-        <div class="tools fade-in" style="opacity: 1; transform: translate(0px, 0px);">
-          <div class="pagination-wrap"></div>
-          <div class="writing"><button class="m-button dark gothic">
-              작성하기
-            </button></div>
-        </div>
-    </div>
-  </div>
 
 
 
-          <div id="data"></div>
-          <script>
-            // API 주소
-            const apiUrl =
-              "https://script.google.com/macros/s/AKfycbxSeCqZz3L82StT285iwk677JA_UtoGTlrB2Ko7k974LHi--4kaSMTz-aqCIBIlelI/exec?sheetName=guestbook";
+              <div id="data"></div>
+              <script>
+                // API 주소
+                const apiUrl =
+                  "https://script.google.com/macros/s/AKfycbxSeCqZz3L82StT285iwk677JA_UtoGTlrB2Ko7k974LHi--4kaSMTz-aqCIBIlelI/exec?sheetName=guestbook";
 
-            // JSON 데이터 가져오기
-            fetch(apiUrl)
-              .then((response) => response.json())
-              .then((data) => {
-                // 데이터 timestamp를 기준으로 내림차순 정렬하기
-                data.data.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+                // JSON 데이터 가져오기
+                fetch(apiUrl)
+                  .then((response) => response.json())
+                  .then((data) => {
+                    // 데이터 timestamp를 기준으로 내림차순 정렬하기
+                    data.data.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
 
-                // 데이터 HTML에 출력하기
-                const dataContainer = document.getElementById("data");
-                data.data.forEach((item) => {
-                  const timestamp = new Date(item.timestamp).toLocaleString('ko-KR', { year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric' });
-                  const html = `<div class="data-item">
+                    // 데이터 HTML에 출력하기
+                    const dataContainer = document.getElementById("data");
+                    data.data.forEach((item) => {
+                      const timestamp = new Date(item.timestamp).toLocaleString('ko-KR', { year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric' });
+                      const html = `<div class="data-item">
                          <div class="groomOrBride">${item.groomOrBride}</div>
                           <div class="timestamp">${timestamp}</div>
                           <div class="name">${item.name}</div>
                           <div class="text">${item.text}</div>
                         </div>`;
-                  dataContainer.innerHTML += html;
-                });
-              });
-          </script>
+                      dataContainer.innerHTML += html;
+                    });
+                  });
+              </script>
+            </div>
+
+          </div>
         </div>
-
-    </div>
-  </div>   //guestBookWrap -->
       </section>
-
+      <!-- //guestBookWrap -->
 
 
 
@@ -2029,167 +2000,6 @@
     };
     firebase.initializeApp(firebaseConfig);
     const db = firebase.firestore();
-    var guestbookRef = db.collection("guestbook");
-
-
-
-
-    // Update guestbook list
-    function updateGuestbookList(querySnapshot) {
-      var guestbookList = document.querySelector("#guestbook-list");
-      guestbookList.innerHTML = "";
-      querySnapshot.forEach(function (doc) {
-        var data = doc.data();
-        var name = data.name || "익명";
-        var gender = data.gender;
-        var message = data.message;
-        var timestamp = data.timestamp ? data.timestamp.toDate().toLocaleString() : "";
-
-        var card = document.createElement("div");
-        card.classList.add("card");
-
-        var cardContent = document.createElement("div");
-        cardContent.classList.add("card-content");
-        cardContent.innerHTML = "<strong>(" + gender + ")" + name + " </strong>: " + message;
-
-        var cardTimestamp = document.createElement("div");
-        cardTimestamp.classList.add("card-timestamp");
-        cardTimestamp.textContent = timestamp;
-
-        var deleteButton = document.createElement("button");
-        deleteButton.classList.add("delete-button");
-        deleteButton.textContent = "X";
-        deleteButton.onclick = function () {
-          showDeleteModal(doc.id);
-        };
-
-        cardContent.appendChild(cardTimestamp);
-        card.appendChild(cardContent);
-        card.appendChild(deleteButton);
-        guestbookList.appendChild(card);
-      });
-    }
-
-
-
-
-    // Write guestbook data
-    function writeGuestbookData(name, gender, message, password) {
-      guestbookRef.add({
-        name: name,
-        gender: gender,
-        message: message,
-        password: password,
-        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-      }).then(function (docRef) {
-        // Apply fade-in effect to newly added data
-        var listItem = document.createElement("li");
-        listItem.innerHTML = "<strong>" + name + " (" + gender + ")</strong>: " + message +
-          '<button class="delete-button" onclick="showDeleteModal(\'' + docRef.id + '\')">X</button>';
-        listItem.classList.add("fadein");
-        var guestbookList = document.querySelector("#guestbook-list");
-        guestbookList.insertBefore(listItem, guestbookList.firstChild);
-        setTimeout(function () {
-          listItem.classList.remove("fadein");
-        }, 100);
-      });
-    }
-
-    // Delete guestbook data
-    function deleteGuestbookData(docId) {
-      guestbookRef.doc(docId).delete().then(function () {
-        hideModal();
-      });
-    }
-
-    // Edit guestbook data
-    function editGuestbookData(docId, name, gender, message) {
-      guestbookRef.doc(docId).update({
-        name: name,
-        gender: gender,
-        message: message,
-      }).then(function () {
-        hideModal();
-      });
-    }
-
-    // Handle form submission
-    function handleSubmit(event) {
-      event.preventDefault();
-      var nameInput = document.querySelector("#name-input");
-      var genderInput = document.querySelector("#gender-input");
-      var messageInput = document.querySelector("#message-input");
-      var passwordInput = document.querySelector("#password-input");
-      var name = nameInput.value;
-      var gender = genderInput.value;
-      var message = messageInput.value;
-      var password = passwordInput.value;
-      writeGuestbookData(name, gender, message, password);
-      nameInput.value = "";
-      genderInput.value = "신랑에게";
-      messageInput.value = "";
-      passwordInput.value = "";
-    }
-
-    // Show delete confirmation modal
-    function showDeleteModal(docId) {
-      var modal = document.querySelector("#delete-modal");
-      var confirmButton = document.querySelector("#delete-confirm-button");
-      confirmButton.onclick = function () {
-        var passwordInput = document.querySelector("#delete-password-input");
-        var password = passwordInput.value;
-        checkPassword(docId, password, function (result) {
-          if (result) {
-            deleteGuestbookData(docId);
-          } else {
-            alert("비밀번호가 일치하지 않습니다.");
-          }
-        });
-      };
-      showModal(modal);
-    }
-
-    // Check password
-    function checkPassword(docId, password, callback) {
-      guestbookRef.doc(docId).get().then(function (doc) {
-        if (doc.exists) {
-          var data = doc.data();
-          var storedPassword = data.password;
-          if (password === storedPassword) {
-            callback(true);
-          } else {
-            callback(false);
-          }
-        } else {
-          callback(false);
-        }
-      }).catch(function (error) {
-        callback(false);
-      });
-    }
-
-    // Show modal
-    function showModal(modal) {
-      modal.style.display = "block";
-    }
-
-    // Hide modal
-    function hideModal() {
-      var modals = document.querySelectorAll(".modal");
-      modals.forEach(function (modal) {
-        modal.style.display = "none";
-      });
-    }
-
-    // Initialize
-    function initialize() {
-      // Register guestbook list update listener
-      guestbookRef.orderBy("timestamp", "desc").onSnapshot(updateGuestbookList);
-    }
-
-    // Call the initialization function
-    initialize();
-
 
     // Contact 버튼 클릭 시 모달 창 열기
     document.getElementById("contact-button").addEventListener("click", function () {

@@ -1,0 +1,95 @@
+<html>
+
+<style>
+    .guestbook-wrap {
+        padding-top: 40px;
+        margin-bottom: 40px;
+    }
+
+    div {
+        display: block;
+    }
+
+    .c-guestbook {
+        margin: 0;
+        font-size: .86rem;
+    }
+
+    .gothic {
+        font-family: var(--font-gothic), BlinkMacSystemFont, Apple SD Gothic Neo, Helvetica Neue, Helvetica, Arial, Malgun Gothic, "\B9D1\C740 \ACE0\B515", Dotum, 돋움, sans-serif;
+        letter-spacing: var(--font-gothic-spacing);
+    }
+
+    .c-guestbook .comments {
+        padding: 0 var(--common-margin-lr);
+        border: var(--border-size) solid var(--border-color);
+        border-left: 0;
+        border-right: 0;
+    }
+
+    .fade-in {
+        transition: all .8s ease-out;
+        box-sizing: border-box;
+    }
+
+    .c-guestbook .item {
+        position: relative;
+        padding: 0.75rem 1rem;
+        text-align: left;
+        line-height: 1.5rem;
+        background: hsla(0, 0%, 100%, .75);
+        border-radius: 8px;
+        margin-bottom: 6px;
+        box-shadow: 1px 1px 2px rgb(0 0 0/5%);
+    }
+
+    .c-guestbook .item .close {
+        position: absolute;
+        top: 1.2rem;
+        right: 1rem;
+        line-height: 0;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    .c-guestbook .item .name {
+        font-weight: 600;
+        font-size: .8rem;
+        margin-bottom: 0.25rem;
+    }
+
+    .c-guestbook .item .text {
+        line-height: 1.25rem;
+    }
+</style>
+
+<body>
+
+
+    <div class="guestbook-wrap">
+        <div class="c-guestbook gothic">
+            <div class="comments fade-in" style="opacity: 1; transform: translate(0px, 0px);">
+                <div class="item white">
+                    <div class="close"><span class="date">2023.03.22</span> <span class="icon"><svg width="15px"
+                                height="15px" viewBox="0 0 15 15" fill="black" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M6.7929 7.49998L1.14645 1.85353L1.85356 1.14642L7.50001 6.79287L13.1465 1.14642L13.8536 1.85353L8.20711 7.49998L13.8536 13.1464L13.1465 13.8535L7.50001 8.20708L1.85356 13.8535L1.14645 13.1464L6.7929 7.49998Z">
+                                </path>
+                            </svg></span></div>
+                    <div class="name">Yoon</div>
+                    <div class="text">드뎌 부부 🙊 행복하세요 💓</div>
+                </div>
+
+            </div>
+            <div class="tools fade-in" style="opacity: 1; transform: translate(0px, 0px);">
+                <div class="pagination-wrap"><!----></div>
+                <div class="writing"><button class="m-button dark gothic">
+                        작성하기
+                    </button></div>
+            </div> <!---->
+        </div>
+    </div>
+
+</body>
+
+</html>
