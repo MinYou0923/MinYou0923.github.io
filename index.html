@@ -11,8 +11,8 @@
   <meta name="viewport"
     content="user-scalable=no, initial-scale=1.0, maximum-scale=1, minimum-scale=1.0, width=device-width">
   <meta property="og:title" content="김민석 ♥ 이유선, 결혼합니다!">
-  <meta property="og:description" content="저희 두 사람의 특별한 소식을 전합니다.">
-  <meta property="og:image" content="./assets/dist/gallery/w0.jpg">
+  <meta property="og:description" content="23년 9월 23일 삼성금융캠퍼스로 초대드립니다 :)">
+  <meta property="og:image" content="./assets/dist/gallery/og.jpg">
 
   <!--Favicons -->
   <link rel="icon" type="image/png" sizes="180x180" href="./assets/dist/image/favicon-180x180.png">
@@ -343,7 +343,7 @@
           <br />
 
           <div class="countDay">
-            <span>민석 <span style="color:#ff5050">❤</span> 유선의 결혼식이 </span>
+            <span>민석 <span style="color:#ff5050">♥</span> 유선의 결혼식이 </span>
             <span class="num"><em class="day1">0</em><em class="day2">0</em><em class="day3">0</em></span>
             <span class="txt">일 남았습니다.</span>
           </div>
@@ -651,7 +651,8 @@
                   <a href="#;" class="btns no2" onclick="fnCallWeb2App('tmap')"><span>티맵</span></a>
                   <a href="#;" class="btns no3" onclick="fnCallWeb2App('naverMap')"><span>네이버지도</span></a>
                 </div>
-                <button type="button" class="btns t1 c2" onclick="openImg('assets/dist/image/map.jpg');"><span
+                <button type="button" style="border: 1px solid #eaeaea;
+                background: #fff;" class="btns t1 c2" onclick="openImg('assets/dist/image/map.jpg');"><span
                     class="roughMap">약도 이미지 보기</span></button>
               </div>
 
@@ -831,17 +832,51 @@
         .c-guestbook .item .text {
           line-height: 1.25rem;
         }
+
+        .card {
+          position: relative;
+          padding: 0.75rem 1rem;
+          text-align: left;
+          line-height: 1.5rem;
+          background: hsla(0, 0%, 100%, .75);
+          border-radius: 8px;
+          margin-bottom: 10px;
+          box-shadow: 1px 1px 2px rgb(0 0 0/5%);
+        }
+
+        .card-content {
+          /*margin-bottom: 8px;*/
+        }
+
+        .card-timestamp {
+          font-size: 12px;
+          color: #999;
+          position: absolute;
+          top: 8px;
+          right: 35px;
+        }
+
+        .delete-button {
+          /*float: right;*/
+        }
       </style>
-      <!-- guestBookWrap - 한 줄 메세지 & 참석 여부
+      <!-- guestBookWrap - 한 줄 메세지 & 참석 여부-->
       <section class="guestBookWrap" id="guestBookWrap">
         <div class="guestBookInner">
           <div class="secTitleWrap t1" style="border-bottom: 0px;">
             <p class="headtitle" style="margin-bottom: 15px;padding-top: 0px;">GUESTBOOK</p>
             <p style="font-family: 'AritaBuri'; font-weight: 600;font-size: 18px;color: #222222;margin-bottom: 3px;">방명록
             </p>
-            <p>따듯한 축하의 마음을 남겨주세요 :)</p>
+            <p style="margin-bottom: 15px;">따듯한 축하의 마음을 남겨주세요 :)</p>
+            <button type="button" id="guestbook-button" class="btns btns_call c2"><span class="guest">방명록
+                남기기</span></button>
           </div>
-          
+          <div class="c-guestbook gothic">
+            <div class="comments fade-in" style="opacity: 1; transform: translate(0px, 0px);">
+              <div id="guestbook-list"></div>
+            </div>
+          </div>
+          <!-- 
           <div class="mt">
 
             <div class="comWrap">
@@ -925,7 +960,7 @@
 
 
 
-      <!-- Delete confirmation modal --> <!--
+          <!-- Delete confirmation modal --> <!--
           <div id="delete-modal" class="modal">
             <div class="modal-content">
               <h2>비밀번호 확인</h2>
@@ -1248,6 +1283,22 @@
     }
   </script>
   <style>
+    .guestbook-header {
+      padding: 16px 24px 0;
+    }
+
+    .guestbook-header .guestbook_close {
+      float: right;
+      cursor: pointer;
+      margin: -1px 0 0 16px;
+    }
+
+    .guestbook-header .guestbook_close svg {
+      width: 12px;
+      height: 12px;
+      vertical-align: middle;
+    }
+
     .contact-header {
       padding: 16px 24px 0;
     }
@@ -1259,6 +1310,22 @@
     }
 
     .contact-header .contact_close svg {
+      width: 12px;
+      height: 12px;
+      vertical-align: middle;
+    }
+
+    .delete-header {
+      padding: 16px 24px 0;
+    }
+
+    .contact-header .delete_close {
+      float: right;
+      cursor: pointer;
+      margin: -1px 0 0 16px;
+    }
+
+    .contact-header .delete_close svg {
       width: 12px;
       height: 12px;
       vertical-align: middle;
@@ -1480,7 +1547,13 @@
     }
 
     input::placeholder {
-      color: rgb(87, 87, 87);
+      color: rgb(37, 37, 37);
+      font-size: 1em;
+
+    }
+
+    textarea::placeholder {
+      color: rgb(37, 37, 37);
       font-size: 1em;
 
     }
@@ -1504,13 +1577,14 @@
     .contact-modal-wrap .content>div {
       display: flex;
       padding: 0;
-      margin-top: 20px;
+      margin-top: 30px;
     }
 
     .contact-modal-wrap .content>div>.cell {
       flex: 1.5;
       text-align: center;
       letter-spacing: .5px;
+      font-size: 18px;
     }
 
     .contact-modal-wrap .content>div>.cell:last-child {
@@ -1541,14 +1615,131 @@
     .vue-dialog div {
       box-sizing: border-box;
     }
+
+    .c-guestbook {
+      margin: 0;
+      font-size: .86rem;
+    }
+
+    .gothic {
+      font-family: var(--font-gothic), BlinkMacSystemFont, Apple SD Gothic Neo, Helvetica Neue, Helvetica, Arial, Malgun Gothic, "\B9D1\C740 \ACE0\B515", Dotum, 돋움, sans-serif;
+      letter-spacing: var(--font-gothic-spacing);
+    }
+
+    .c-guestbook .comments {
+      padding: 0 var(--common-margin-lr);
+      border: var(--border-size) solid var(--border-color);
+      border-left: 0;
+      border-right: 0;
+    }
+
+    .fade-in {
+      transition: all .8s ease-out;
+      box-sizing: border-box;
+    }
+
+    .c-guestbook .item {
+      position: relative;
+      padding: 0.75rem 1rem;
+      text-align: left;
+      line-height: 1.5rem;
+      background: hsla(0, 0%, 100%, .75);
+      border-radius: 8px;
+      margin-bottom: 6px;
+      box-shadow: 1px 1px 2px rgb(0 0 0/5%);
+    }
+
+    .c-guestbook .item .close {
+      position: absolute;
+      top: 1.2rem;
+      right: 1rem;
+      line-height: 0;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .c-guestbook .item .name {
+      font-weight: 600;
+      font-size: .8rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .c-guestbook .item .text {
+      line-height: 1.25rem;
+    }
+
+    .delete-button,
+    .edit-button {
+      position: absolute;
+      top: 8px;
+      right: 15px;
+      font-size: 13px;
+      cursor: pointer;
+      background-color: transparent;
+      border: none;
+      color: #666;
+    }
+
+    .pwcheck {
+      border: none;
+      padding: 0 10px;
+      width: 100%;
+      height: 40px;
+      color: #000;
+      font-size: .85rem;
+      font-weight: 400;
+      outline: none;
+      background: #f9f9f9;
+      appearance: none;
+      -webkit-appearance: none;
+      border-radius: none;
+      -webkit-border-radius: 0;
+      letter-spacing: var(--font-gothic-spacing);
+    }
   </style>
 
+  <!-- Delete confirmation modal -->
+  <div id="delete-modal" class="modal">
+    <div class="modal-content">
+      <div class="contact-header" style="font-size: 15px;"><strong><span>비밀번호 확인</span></strong>
+        <div class="delete_close"><span class="icon"><svg width="15px" height="15px" viewBox="0 0 15 15" fill="black"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M6.7929 7.49998L1.14645 1.85353L1.85356 1.14642L7.50001 6.79287L13.1465 1.14642L13.8536 1.85353L8.20711 7.49998L13.8536 13.1464L13.1465 13.8535L7.50001 8.20708L1.85356 13.8535L1.14645 13.1464L6.7929 7.49998Z">
+              </path>
+            </svg></span></div>
 
+
+        <div onselectstart="return false" class="rsvp-modal-wrap">
+          <div class="rsvp-modal-inner" id="guestbook-form">
+            <div style="margin-top:5px">
+              <input type="password" id="delete-password-input" class="pwcheck" placeholder="메시지의 비밀번호를 입력해주세요."
+                required />
+            </div>
+
+
+            <button id="delete-confirm-button" class="btn-submit">확인</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+  </div>
+
+  <div class="modal-button-container">
+
+
+  </div>
+  </div>
+  </div>
 
   <!-- Contact 모달 -->
   <div id="contact-modal" class="modal">
     <div class="modal-content">
-      <div class="contact-header"><span>연락하기</span>
+      <div class="contact-header" style="font-size: 18px;"><strong><span>연락하기</span></strong>
         <div class="contact_close"><span class="icon"><svg width="15px" height="15px" viewBox="0 0 15 15" fill="black"
               xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd" clip-rule="evenodd"
@@ -1948,6 +2139,74 @@
 
 
 
+  <!-- 방명록 모달 -->
+  <div id="guestbook-modal" class="modal">
+    <div class="modal-content">
+      <div class="guestbook-header"><span>방명록 남기기</span>
+        <div class="guestbook_close"><span class="icon"><svg width="15px" height="15px" viewBox="0 0 15 15" fill="black"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M6.7929 7.49998L1.14645 1.85353L1.85356 1.14642L7.50001 6.79287L13.1465 1.14642L13.8536 1.85353L8.20711 7.49998L13.8536 13.1464L13.1465 13.8535L7.50001 8.20708L1.85356 13.8535L1.14645 13.1464L6.7929 7.49998Z">
+              </path>
+            </svg></span></div>
+      </div>
+      <div onselectstart="return false" class="rsvp-modal-wrap">
+        <div class="rsvp-modal-inner" id="guestbook-form">
+          <table>
+            <colgroup>
+              <col style="width: 80px;">
+              <col>
+            </colgroup>
+            <tbody>
+              <tr>
+                <th>메시지 대상</th>
+                <td>
+                  <div class="radio">
+                    <div><input type="radio" id="guest-side-gr" name="guestbook-type" value="민석" checked="checked">
+                      <label for="guest-side-gr" class="blue-fill">신랑에게</label>
+                    </div>
+                    <div><input type="radio" id="guest-side-br" name="guestbook-type" value="유선"> <label
+                        for="guest-side-br" class="red-fill">신부에게</label></div>
+                  </div>
+                </td>
+              </tr> <!---->
+              <tr>
+                <th>이름<!----></th>
+                <td><input type="text" id="name-input" maxlength="12" placeholder="이름" required /></td>
+              </tr> <!---->
+              <tr>
+              <tr>
+                <th>비밀번호<!----></th>
+                <td><input type="password" id="password-input" placeholder="비밀번호" required /></td>
+              </tr> <!---->
+            </tbody>
+          </table> <!--<div class="btn-submit" type="submit">참석 의사 전달하기</div>-->
+          <div style="margin-top:5px"><textarea id="message-input" type="text" style=" width: 100%;"
+              placeholder="메시지를 남겨주세요." rows="4" required></textarea></div>
+
+
+          <button type="submit" class="btn-submit">메시지 전송</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <style>
+    #message-input {
+      border: 0px;
+      padding: 10px;
+      color: #000;
+      font-size: .85rem;
+      font-weight: 400;
+      outline: none;
+      background: #f9f9f9;
+      appearance: none;
+      -webkit-appearance: none;
+      border-radius: none;
+      -webkit-border-radius: 0;
+      letter-spacing: var(--font-gothic-spacing);
+    }
+  </style>
+
 
   <!-- RSVP 모달 -->
   <div id="rsvp-modal" class="modal">
@@ -2032,8 +2291,6 @@
     var guestbookRef = db.collection("guestbook");
 
 
-
-
     // Update guestbook list
     function updateGuestbookList(querySnapshot) {
       var guestbookList = document.querySelector("#guestbook-list");
@@ -2043,32 +2300,47 @@
         var name = data.name || "익명";
         var gender = data.gender;
         var message = data.message;
-        var timestamp = data.timestamp ? data.timestamp.toDate().toLocaleString() : "";
+        var timestamp = data.timestamp ? formatDate(data.timestamp.toDate()) : "";
+
+
+        function formatDate(date) {
+          var year = date.getFullYear().toString().substr(-2);
+          var month = ("0" + (date.getMonth() + 1)).slice(-2);
+          var day = ("0" + date.getDate()).slice(-2);
+          return year + "." + month + "." + day;
+        }
+
+        var cardContainer = document.createElement("div");
+        cardContainer.classList.add("card-container");
 
         var card = document.createElement("div");
         card.classList.add("card");
 
         var cardContent = document.createElement("div");
         cardContent.classList.add("card-content");
-        cardContent.innerHTML = "<strong>(" + gender + ")" + name + " </strong>: " + message;
+        cardContent.innerHTML = "<div class='name'><strong>" + name + "</strong> to " + gender + "</div><div class='message' style='margin-top:5px;'>" + message + "</div>";
 
         var cardTimestamp = document.createElement("div");
         cardTimestamp.classList.add("card-timestamp");
         cardTimestamp.textContent = timestamp;
 
-        var deleteButton = document.createElement("button");
+
+        var deleteButton = document.createElement("div");
         deleteButton.classList.add("delete-button");
-        deleteButton.textContent = "X";
+        deleteButton.textContent = "✕";
         deleteButton.onclick = function () {
           showDeleteModal(doc.id);
         };
 
-        cardContent.appendChild(cardTimestamp);
         card.appendChild(cardContent);
+        card.appendChild(cardTimestamp);
         card.appendChild(deleteButton);
-        guestbookList.appendChild(card);
+        cardContainer.appendChild(card);
+        guestbookList.appendChild(cardContainer);
       });
     }
+
+
 
 
 
@@ -2085,7 +2357,7 @@
         // Apply fade-in effect to newly added data
         var listItem = document.createElement("li");
         listItem.innerHTML = "<strong>" + name + " (" + gender + ")</strong>: " + message +
-          '<button class="delete-button" onclick="showDeleteModal(\'' + docRef.id + '\')">X</button>';
+          '<button class="delete-button" onclick="showDeleteModal(\'' + docRef.id + '\')">✕</button>';
         listItem.classList.add("fadein");
         var guestbookList = document.querySelector("#guestbook-list");
         guestbookList.insertBefore(listItem, guestbookList.firstChild);
@@ -2113,11 +2385,41 @@
       });
     }
 
+
+    // RSVP 양식 제출 시 데이터 저장
+    document.querySelector("#guestbook-form button[type='submit']").addEventListener("click", function (event) {
+      event.preventDefault(); // 버튼 클릭 시 폼 제출 동작 방지
+
+      // 입력된 값 가져오기
+      const genderInput = document.querySelector('input[name="guestbook-type"]:checked').value;
+      const nameInput = document.getElementById("name-input").value;
+      const passwordInput = document.getElementById("password-input").value;
+      const messageInput = document.getElementById("message-input").value;
+
+      // 데이터 저장
+      db.collection("guestbook").add({
+        name: nameInput,
+        gender: genderInput,
+        password: passwordInput,
+        message: messageInput,
+        timestamp: firebase.firestore.FieldValue.serverTimestamp()
+      }).then(function (docRef) {
+        console.log("RSVP 데이터가 성공적으로 저장되었습니다.");
+        // 여기에 필요한 추가 동작을 수행하세요 (예: 모달 닫기, 메시지 표시 등)
+        document.getElementById("guestbook-modal").style.display = "none";
+      }).catch(function (error) {
+        console.error("guestbook 데이터 저장 중 오류 발생:", error);
+        // 여기에 오류 처리 동작을 수행하세요 (예: 오류 메시지 표시 등)
+      });
+    });
+
+
     // Handle form submission
     function handleSubmit(event) {
       event.preventDefault();
+
       var nameInput = document.querySelector("#name-input");
-      var genderInput = document.querySelector("#gender-input");
+      var genderInput = document.querySelector('input[name="guestbook-type"]:checked').value;
       var messageInput = document.querySelector("#message-input");
       var passwordInput = document.querySelector("#password-input");
       var name = nameInput.value;
@@ -2126,10 +2428,10 @@
       var password = passwordInput.value;
       writeGuestbookData(name, gender, message, password);
       nameInput.value = "";
-      genderInput.value = "신랑에게";
+      genderInput.value = "신랑";
       messageInput.value = "";
       passwordInput.value = "";
-    }
+    };
 
     // Show delete confirmation modal
     function showDeleteModal(docId) {
@@ -2190,6 +2492,17 @@
     // Call the initialization function
     initialize();
 
+    // guestbook 버튼 클릭 시 모달 창 열기
+    document.getElementById("guestbook-button").addEventListener("click", function () {
+      document.getElementById("guestbook-modal").style.display = "block";
+      document.getElementById("name-input").focus();
+    });
+
+    // 모달 닫기 버튼 클릭 시 모달 창 닫기
+    document.getElementsByClassName("guestbook_close")[0].addEventListener("click", function () {
+      document.getElementById("guestbook-modal").style.display = "none";
+    });
+
 
     // Contact 버튼 클릭 시 모달 창 열기
     document.getElementById("contact-button").addEventListener("click", function () {
@@ -2199,6 +2512,11 @@
     // 모달 닫기 버튼 클릭 시 모달 창 닫기
     document.getElementsByClassName("contact_close")[0].addEventListener("click", function () {
       document.getElementById("contact-modal").style.display = "none";
+    });
+
+    // 모달 닫기 버튼 클릭 시 모달 창 닫기
+    document.getElementsByClassName("delete_close")[0].addEventListener("click", function () {
+      document.getElementById("delete-modal").style.display = "none";
     });
 
     // RSVP 버튼 클릭 시 모달 창 열기
