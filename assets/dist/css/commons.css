@@ -858,7 +858,7 @@ body.showImg .popImg{visibility: visible;opacity: 1}
 /***************************************************************************************
  Media Query
 ***************************************************************************************/
-@media all and (max-width:1024px) {
+@media all and (max-width:3024px) {
 
 .guestName {font-size:13px; line-height:13px;}
 
