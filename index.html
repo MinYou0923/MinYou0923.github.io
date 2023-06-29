@@ -246,6 +246,9 @@
           height: 30px;
           line-height: 30px;
           border-radius: 30px;
+          /*display: flex;
+          align-items: center;
+          justify-content: center;*/
         }
 
         .c-calendar-eday>div {
@@ -657,7 +660,7 @@
               </div>
 
               <div class="box">
-                <h3 class="tit01">주차안내</h3>
+                <h3 class="tit01">주차 안내</h3>
                 <p class="tit02">150대 동시 주차 가능, 2시간 무료 주차</p>
               </div>
               <div class="box">
@@ -862,158 +865,24 @@
       </style>
       <!-- guestBookWrap - 한 줄 메세지 & 참석 여부-->
       <section class="guestBookWrap" id="guestBookWrap">
-        <div class="guestBookInner">
-          <div class="secTitleWrap t1" style="border-bottom: 0px;">
-            <p class="headtitle" style="margin-bottom: 15px;padding-top: 0px;">GUESTBOOK</p>
-            <p style="font-family: 'AritaBuri'; font-weight: 600;font-size: 18px;color: #222222;margin-bottom: 3px;">방명록
-            </p>
-            <p style="margin-bottom: 15px;">따듯한 축하의 마음을 남겨주세요 :)</p>
-            <button type="button" id="guestbook-button" class="btns btns_call c2"><span class="guest">방명록
-                남기기</span></button>
-          </div>
-          <div class="c-guestbook gothic">
-            <div class="comments fade-in" style="opacity: 1; transform: translate(0px, 0px);">
-              <div id="guestbook-list"></div>
+        <div style="max-width: 540px; margin: 0 auto;">
+          <div class="guestBookInner">
+            <div class="secTitleWrap t1" style="border-bottom: 0px;">
+              <p class="headtitle" style="margin-bottom: 15px;padding-top: 0px;">GUESTBOOK</p>
+              <p style="font-family: 'AritaBuri'; font-weight: 600;font-size: 18px;color: #222222;margin-bottom: 10px;">
+                방명록
+              </p>
+              <p style="margin-bottom: 20px;">따듯한 축하의 마음을 남겨주세요 :)</p>
+              <button type="button" id="guestbook-button" class="btns btns_call c2"><span class="guest">방명록
+                  남기기</span></button>
             </div>
-          </div>
-          <!-- 
-          <div class="mt">
-
-            <div class="comWrap">
-
-              <div class="inputWrap">
-                <form name="fguest_book" id="fguest_book" onsubmit="return false">
-                  <input type="hidden" name="gb_to" id="gb_to" value="tpl_maleface"><input type="hidden" name="ca_name"
-                    value="청첩장"><input type="hidden" name="site_name" value="wedding03-new">
-
-                  <div class="in">
-                    <div class="user">
-                      <div class="selBox">
-                        <ul class="list">
-                          <li>
-                            <input type="radio" checked name="send" id="h02" value="신랑" data-gb_to="tpl_maleface">
-                            <label for="h02">
-                              🤵🏻 신랑에게
-                            </label>
-                          </li>
-                          <li>
-                            <input type="radio" name="send" id="h01" value="신부" data-gb_to="tpl_femaleface">
-                            <label for="h01">
-                              👰🏻 신부에게
-                            </label>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div><input type="text" id="name-input_gb" name="name-input_gb" class="inputBox ipText"
-                        placeholder="이름" maxlength="10"
-                        style="width: 100%; margin-bottom:8px;padding: 17px;font-size: 13px;">
-                      <input type="text" id="pw-input_gb" name="pw-input_gb" class="inputBox ipText" placeholder="비밀번호"
-                        maxlength="20"
-                        style="width: 30%; padding:10px; margin-bottom:8px;padding: 17px;font-size: 13px;">
-                    </div>
-
-                    <div class="inputBox">
-                      <input type="text" name="gb_comment" id="gb_comment" class="ipText"
-                        placeholder="축하 메시지를 입력해주세요. (최대 40자)" maxlength="40">
-
-                      <div class="btnComment" id="1212">
-                        <a href="javascript:startsend();" class="any">전송</a>
-                      </div>
-
-
-
-                    </div>
-                  </div>
-                </form>
-              </div>
-
-          <ul id="guestbook-list" style="card"></ul>
-
-          <div>
             <div class="c-guestbook gothic">
               <div class="comments fade-in" style="opacity: 1; transform: translate(0px, 0px);">
-                <div class="item white">
-                  <div class="close"><span class="date"
-                      style="position: absolute;top: 55%; left: -500%;">2023.03.22</span> <span class="icon"><svg
-                        width="15px" height="15px" viewBox="0 0 15 15" fill="black" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                          d="M6.7929 7.49998L1.14645 1.85353L1.85356 1.14642L7.50001 6.79287L13.1465 1.14642L13.8536 1.85353L8.20711 7.49998L13.8536 13.1464L13.1465 13.8535L7.50001 8.20708L1.85356 13.8535L1.14645 13.1464L6.7929 7.49998Z">
-                        </path>
-                      </svg></span></div>
-                  <div class="name">Yoon</div>
-                  <div class="text">드뎌 부부 🙊 행복하세요 💓</div>
-                </div>
-
-
-                <form id="guestbook-form" onsubmit="handleSubmit(event)">
-                  <select id="gender-input" required>
-                    <option value="신랑에게">신랑에게</option>
-                    <option value="신부에게">신부에게</option>
-                  </select>
-                  <input type="text" id="name-input" placeholder="이름" required />
-                  <input type="password" id="password-input" placeholder="비밀번호" required /><br />
-                  <textarea id="message-input" type="text" style=" width: 100%;" placeholder="메시지" rows="2"
-                    required></textarea>
-                  <button style=" width: 100%; type=" submit">작성</button>
-                </form>-->
-
-
-
-          <!-- Delete confirmation modal --> <!--
-          <div id="delete-modal" class="modal">
-            <div class="modal-content">
-              <h2>비밀번호 확인</h2>
-              <input type="password" id="delete-password-input" placeholder="비밀번호" required />
-              <div class="modal-button-container">
-                <button id="delete-confirm-button">확인</button>
-                <button onclick="hideModal()">취소</button>
+                <div id="guestbook-list"></div>
               </div>
             </div>
+
           </div>
-        </div>
-        <div class="tools fade-in" style="opacity: 1; transform: translate(0px, 0px);">
-          <div class="pagination-wrap"></div>
-          <div class="writing"><button class="m-button dark gothic">
-              작성하기
-            </button></div>
-        </div>
-    </div>
-  </div>
-
-
-
-          <div id="data"></div>
-          <script>
-            // API 주소
-            const apiUrl =
-              "https://script.google.com/macros/s/AKfycbxSeCqZz3L82StT285iwk677JA_UtoGTlrB2Ko7k974LHi--4kaSMTz-aqCIBIlelI/exec?sheetName=guestbook";
-
-            // JSON 데이터 가져오기
-            fetch(apiUrl)
-              .then((response) => response.json())
-              .then((data) => {
-                // 데이터 timestamp를 기준으로 내림차순 정렬하기
-                data.data.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
-
-                // 데이터 HTML에 출력하기
-                const dataContainer = document.getElementById("data");
-                data.data.forEach((item) => {
-                  const timestamp = new Date(item.timestamp).toLocaleString('ko-KR', { year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric' });
-                  const html = `<div class="data-item">
-                         <div class="groomOrBride">${item.groomOrBride}</div>
-                          <div class="timestamp">${timestamp}</div>
-                          <div class="name">${item.name}</div>
-                          <div class="text">${item.text}</div>
-                        </div>`;
-                  dataContainer.innerHTML += html;
-                });
-              });
-          </script>
-        </div>
-
-    </div>
-  </div>   //guestBookWrap -->
       </section>
 
 
@@ -1022,7 +891,7 @@
 
       <!-- galleryWrap - 웨딩 갤러리 -->
       <section>
-        <div class="secTitleWrap t1" style="background-color: #f9f9f9;">
+        <div class="secTitleWrap t1 kakao-wrap" style="background-color: #f9f9f9;">
 
           <p class="headtitle" style="margin-bottom: 15px;padding-top: 30px;">SHARE</p>
           <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.1.0/kakao.min.js"
@@ -1033,8 +902,16 @@
           </script>
 
           <a id="kakaotalk-sharing-btn" href="javascript:;">
+
             <p style="font-family: 'AritaBuri'; font-weight: 600;font-size: 18px;color: #222222;margin-bottom: 10px;">
-              카카오톡 공유하기</p>
+              <svg id="Bold" enable-background="new 0 0 24 24" height="512" viewBox="0 0 24 24" width="512"
+                xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                <path d="m9.462 9.306-.692 1.951h1.383z"></path>
+                <path
+                  d="m12 1c-6.627 0-12 4.208-12 9.399 0 3.356 2.246 6.301 5.625 7.963-1.299 4.45-1.333 4.47-1.113 4.599.276.161.634-.005 5.357-3.311.692.097 1.404.148 2.131.148 6.627 0 12-4.208 12-9.399s-5.373-9.399-12-9.399zm-5.942 12.023c0 .362-.311.657-.692.657s-.692-.295-.692-.657v-4.086h-1.08c-.375 0-.679-.302-.679-.673s.303-.674.678-.674h3.545c.375 0 .679.302.679.673s-.305.674-.679.674h-1.08zm5.378.648c-.72 0-.587-.565-.919-1.195h-2.111c-.329.625-.2 1.195-.919 1.195-.693.001-.815-.421-.604-1.071l1.656-4.33c.117-.33.471-.669.922-.679.452.01.807.349.923.679 1.093 3.39 2.654 5.402 1.052 5.401zm3.939-.092h-2.221c-1.159 0-.454-1.565-.663-5.301 0-.379.317-.688.707-.688s.707.308.707.688v4.04h1.471c.366 0 .663.283.663.63-.001.348-.298.631-.664.631zm5.419-.518c-.025.181-.122.344-.269.454-.955.721-1.661-1.381-2.593-2.271l-.24.239v1.5c0 .38-.31.688-.693.688-.382 0-.692-.308-.692-.688v-4.705c0-.379.31-.688.692-.688s.692.308.692.688v1.478c1.277-.958 1.985-2.67 2.792-1.869.792.786-.848 1.474-1.527 2.422 1.604 2.212 1.909 2.267 1.838 2.752z">
+                </path>
+              </svg> 카카오톡 공유하기
+            </p>
           </a>
           <script>
             Kakao.Share.createCustomButton({
@@ -1048,9 +925,16 @@
           </script>
           <button class="no2 link" data-clipboard-text="https://minyou0923.github.io/"
             style="margin:auto;display:block;">
+
             <p
               style="font-family: 'AritaBuri'; font-weight: 600;font-size: 18px;color: #222222; margin-bottom: 10px;display:block;">
-              링크주소 복사하기</p>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd"
+                  d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              링크주소 복사하기
+            </p>
           </button>
           <div style="padding-top:10px;padding-bottom:20px;">
             <p class="headtitle" style="font-size :12px;margin-bottom: 15px;padding-top: 0px;letter-spacing :-0.2px;">
