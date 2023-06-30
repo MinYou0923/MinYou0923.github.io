@@ -269,7 +269,7 @@ body.snow .fixObWrap .no7 {background:url('../image/snow07.png') center no-repea
 .secTitleWrap .hanTit > span:not(.ran):before,
 .secTitleWrap .hanTit > span:not(.ran):after{content:''; position: absolute; left:0; top:50%; margin-top:-1px;width:2px; height:2px;background:#8b6e76;border-radius:50%; display: none;}
 .secTitleWrap .hanTit > span:not(.ran):after{left: auto;right:0;}
-.secTitleWrap p{font-size: 24px;text-align: center;margin-top: 0px;line-height: 1.4;letter-spacing:2px; margin-bottom:30px;font-weight: 400;}
+.secTitleWrap p{font-size: 14px;text-align: center;margin-top: 0px;line-height: 1.4;letter-spacing:2px; margin-bottom:30px;font-weight: 400;}
 .secTitleWrap.t1 .hanTit{font-size: 14px;letter-spacing:.3em;text-indent: .3em;}
 .secTitleWrap.t1 .hanTit:before,
 .secTitleWrap.t1 .hanTit:after,
@@ -343,7 +343,7 @@ body.snow .fixObWrap .no7 {background:url('../image/snow07.png') center no-repea
 
 .secTitleWrap .hanTit > span:not(.ran):before, .secTitleWrap .hanTit > span:not(.ran):after {background: #e2d3d7;}
 
-.dayWrap .dayBox p{font-family: 'AritaBuri';font-weight: 600;color: #222222;font-size: 27px;line-height: 1.4; text-align: center;}
+.dayWrap .dayBox p{font-family: 'AritaBuri';font-weight: 600;color: #222222;font-size: 18px;line-height: 1.4; text-align: center;}
 .dayWrap .placeBox{position: relative;padding: 23px 0 22px;margin-bottom: 18px;}
 .dayWrap .placeBox:before,
 .dayWrap .placeBox:after{display: block;content: '';width: 100%;height: 1px;background:url('../image/bg_thx02.png') no-repeat 50% 50%;position: absolute;top:0;left:0}
@@ -999,7 +999,7 @@ body.showImg .popImg{visibility: visible;opacity: 1}
 .dayWrap .secTitleWrap{margin-bottom: 30px;}
 .dayWrap .dayInner{padding:50px 30px 54px;}
 .dayWrap .dayBox{padding: 0;margin-bottom: 24px;}
-/*.dayWrap .dayBox p{font-size: 18px;line-height: 1.38;}*/
+.dayWrap .dayBox p{font-size: 18px;line-height: 1.38;}
 .dayWrap .point img{width: 70px}
 .dayWrap .placeBox{padding: 15px 0 14px;margin-bottom: 12px;}
 
