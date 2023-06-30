@@ -170,7 +170,7 @@ body.noScroll {overflow: hidden;position: fixed;width: 100%;height: 100%;}
   }
 
   .main .location {
-    font-size: 15px;
+    font-size: 20px;
     padding-bottom: 20%;
   }
 
@@ -999,7 +999,7 @@ body.showImg .popImg{visibility: visible;opacity: 1}
 .dayWrap .secTitleWrap{margin-bottom: 30px;}
 .dayWrap .dayInner{padding:50px 30px 54px;}
 .dayWrap .dayBox{padding: 0;margin-bottom: 24px;}
-.dayWrap .dayBox p{font-size: 18px;line-height: 1.38;}
+/*.dayWrap .dayBox p{font-size: 18px;line-height: 1.38;}*/
 .dayWrap .point img{width: 70px}
 .dayWrap .placeBox{padding: 15px 0 14px;margin-bottom: 12px;}
 
